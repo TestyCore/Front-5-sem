@@ -1,76 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    {% block title %}
-      <title>eDostavka</title>
-    {% endblock %}
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous" />
-    <!-- Add additional CSS in static file -->
+  {% block head %}
+      <title>{% block title %}eDostavka{% endblock %}</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'edostavka/css/styles.css' %}" type="text/css" >
+    <link rel="icon" href="{% static 'edostavka/images/e-logo.png' %}" type="image/x-icon">
+  {% endblock %}
   </head>
 
-
-
   <body>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-2">
+    <div class="main">
+
+{#      <p>Current time and date: <span id="current-date-time"></span></p>#}
+{#      <script>#}
+{#        function updateDateTime() {#}
+{#          var currentDate = new Date();#}
+{#          var formattedDateTime = currentDate.toLocaleString();#}
+{#          var element = document.getElementById('current-date-time');#}
+{#          element.textContent = formattedDateTime;#}
+{#        }#}
+{##}
+{#        updateDateTime();#}
+{#        setInterval(updateDateTime, 1000);#}
+{#      </script>#}
+
+      <div class="nav-bar">
           {% block sidebar %}
-            <ul class="sidebar-nav">
-            <p>Current time and date: <span id="current-date-time"></span></p>
-             <script>
-                function updateDateTime() {
-                    var currentDate = new Date();
-                    var formattedDateTime = currentDate.toLocaleString();
-                    var element = document.getElementById('current-date-time');
-                    element.textContent = formattedDateTime;
-                }
-                updateDateTime();
-                setInterval(updateDateTime, 1000);
-            </script>
-              <li><a href="{% url 'index' %}">Home</a></li>
-                {% for group in user.groups.all %}
-                    {% if group.name == 'Customer' %}
-                        <li><a href="{% url 'products' %}">Products</a></li>
-                        <li><a href="{% url 'cart:cart_detail' %}">Cart</a></li>
-                    {% endif %}
-                {% endfor %}
+            <div class="nav-bar-logo">
+              <a href="{% url 'index' %}"><img src="{% static 'edostavka/images/edostavka-logo.png' %}" alt="edostavka logo"></a>
+            </div>
+            <div class="nav-list">
+          <a href="{% url 'index' %}">Home</a>
+          {% for group in user.groups.all %}
+            {% if group.name == 'Customer' %}
+              <a href="{% url 'products' %}">Products</a>
+              <a href="{% url 'cart:cart_detail' %}">Cart</a>
+            {% endif %}
+          {% endfor %}
 
-                {% for group in user.groups.all %}
-                    {% if group.name == 'Staff' %}
-                        <li><a href="{% url 'client_list:client_list' %}">Clients</a></li>
-                        <li><a href="{% url 'order:orders' %}">All orders</a></li>
-                    {% endif %}
-                {% endfor %}
+          {% for group in user.groups.all %}
+            {% if group.name == 'Staff' %}
+              <a href="{% url 'client_list:client_list' %}">Clients</a>
+              <a href="{% url 'order:orders' %}">All orders</a>
+            {% endif %}
+          {% endfor %}
 
-                {% for group in user.groups.all %}
-                    {% if group.name == 'Admin' %}
-                        <li><a href="{% url 'administrator:list_product' %}">Administrator</a></li>
-                    {% endif %}
-                {% endfor %}
+          {% for group in user.groups.all %}
+            {% if group.name == 'Admin' %}
+              <a href="{% url 'administrator:list_product' %}">Administrator</a>
+            {% endif %}
+          {% endfor %}
 
-                {% if user.is_authenticated %}
-                    <li>User: {{ user.get_username }}</li>
-                    <li><a href="{% url 'logout' %}?next={{ '' }}">Logout</a></li>
-                {% else %}
-                    <li><a href="{% url 'products' %}">Products</a></li>
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                    <li><a href="{% url 'login' %}?next={{ '' }} ">Login</a></li>
-                {% endif %}
-
-            </ul>
-          {% endblock %}
+          {% if user.is_authenticated %}
+            User: {{ user.get_username }}
+            <a href="{% url 'logout' %}?next={{ '' }}">Logout</a>
+          {% else %}
+            <a href="{% url 'products' %}">Products</a>
+{#            <a href="{% url 'register' %}">Register</a>#}
+            <button id="sign-in-button" class="auth-btn">Sign in</button>
+            <button id="sign-up-button" class="auth-btn">Sign up</button>
+{#            <button class="login-btn"><a href="{% url 'login' %}?next={{ '' }} ">Login</a></button>#}
+          {% endif %}
+      {% endblock %}
         </div>
+      </div>
+
+      <div class="content">
         <div class="col-sm-10 ">{% block content %}{% endblock %}
         </div>
       </div>
+
     </div>
   </body>
 </html>
+
+
+  <script>
+  // Add a click event handler to the button
+  document.getElementById("sign-in-button").addEventListener("click", function() {
+    // Redirect to the login page with the 'next' parameter
+    window.location.href = "{% url 'login' %}?next={{ '' }}";
+  });
+</script>
+
+  <script>
+  // Add a click event handler to the button
+  document.getElementById("sign-up-button").addEventListener("click", function() {
+    // Redirect to the login page with the 'next' parameter
+    window.location.href = "{% url 'register' %}?next={{ '' }}";
+  });
+</script>
+{#<div class="container-fluid">#}
+{#      <div class="row">#}
+{#        <div class="col-sm-2">#}
+{#          {% block sidebar %}#}
+{#            <ul class="sidebar-nav">#}
+{#            <p>Current time and date: <span id="current-date-time"></span></p>#}
+{#             <script>#}
+{#                function updateDateTime() {#}
+{#                    var currentDate = new Date();#}
+{#                    var formattedDateTime = currentDate.toLocaleString();#}
+{#                    var element = document.getElementById('current-date-time');#}
+{#                    element.textContent = formattedDateTime;#}
+{#                }#}
+{#                updateDateTime();#}
+{#                setInterval(updateDateTime, 1000);#}
+{#            </script>#}
+{#              <li><a href="{% url 'index' %}">Home</a></li>#}
+{#                {% for group in user.groups.all %}#}
+{#                    {% if group.name == 'Customer' %}#}
+{#                        <li><a href="{% url 'products' %}">Products</a></li>#}
+{#                        <li><a href="{% url 'cart:cart_detail' %}">Cart</a></li>#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+{##}
+{#                {% for group in user.groups.all %}#}
+{#                    {% if group.name == 'Staff' %}#}
+{#                        <li><a href="{% url 'client_list:client_list' %}">Clients</a></li>#}
+{#                        <li><a href="{% url 'order:orders' %}">All orders</a></li>#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+{##}
+{#                {% for group in user.groups.all %}#}
+{#                    {% if group.name == 'Admin' %}#}
+{#                        <li><a href="{% url 'administrator:list_product' %}">Administrator</a></li>#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+{##}
+{#                {% if user.is_authenticated %}#}
+{#                    <li>User: {{ user.get_username }}</li>#}
+{#                    <li><a href="{% url 'logout' %}?next={{ '' }}">Logout</a></li>#}
+{#                {% else %}#}
+{#                    <li><a href="{% url 'products' %}">Products</a></li>#}
+{#                    <li><a href="{% url 'register' %}">Register</a></li>#}
+{#                    <li><a href="{% url 'login' %}?next={{ '' }} ">Login</a></li>#}
+{#                {% endif %}#}
+{##}
+{#            </ul>#}
+{#          {% endblock %}#}
+{#        </div>#}
+{#        <div class="col-sm-10 ">{% block content %}{% endblock %}#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
