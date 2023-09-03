@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Title: {{ product.title }}</h1>
+
+  <p><strong>Manufacturer:</strong>{{ product.manufacturer}}</p>
+  <p><strong>Composition:</strong> {{ product.composition }}</p>
+  <p><strong>EAN:</strong> {{ product.ean }}</p>
+  <p><strong>ProductCategory:</strong> {{ product.category.all|join:", " }}</p>
+  <p><strong>Price:</strong> {{ product.price }}</p>
+
+    {%if user.is_authenticated%}
+        {% for group in user.groups.all %}
+            {% if group.name == 'Customer' %}
+                 <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" value="Add to cart">
+                </form>
+            {% endif %}
+    {% endfor %}
+
+    {% endif %}
+
+  <div style="margin-left:20px;margin-top:20px">
+  </div>
+{% endblock %}

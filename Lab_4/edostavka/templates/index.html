@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>eDostavka Home</h1>
+  <p>
+    Welcome to eDostavka, a website developed by
+    <em>Mozilla Developer Network</em>!
+  </p>
+  <h2>Dynamic content</h2>
+  <p>The site has the following record counts:</p>
+  <ul>
+    <li><strong>Products:</strong> {{ num_products }}</li>
+    <li><strong>Manufacturers:</strong> {{ num_manufacturers }}</li>
+    <li><strong>Quote:</strong> {{ quote }}</li>
+  </ul>
+{% endblock %}

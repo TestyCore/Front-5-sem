@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>User Detail</h1>
+    <p>Username: {{ usr.username }}</p>
+    <p>Email: {{ usr.email }}</p>
+    <p>Last login: {{ usr.last_login }}</p>
+
+
+    <ul>
+        {% for item in ordrs %}
+            <li>
+            <strong>{{ item.order }}</strong>
+                <ul>
+                    {% for item in item.order_items %}
+                        <li>{{ item.0 }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+
+
+
+{% endblock %}

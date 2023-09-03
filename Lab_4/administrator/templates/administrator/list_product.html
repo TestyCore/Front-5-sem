@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Product List</h1>
+  {% if products %}
+    <ul>
+    <form action="{% url 'administrator:create_product'%}" method="get">
+            {% csrf_token %}
+            <input type="submit" value="Create">
+    </form>
+
+      {% for product in products %}
+      <li>
+        <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+        ({{product.price}})
+      </li>
+          <form action="{% url 'administrator:edit_product' product.id %}" method="get">
+            {% csrf_token %}
+            <input type="submit" value="Edit">
+          </form>
+          <form action="{% url 'administrator:delete_product' product.id %}" method="get">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+          </form>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no products in the store.</p>
+  {% endif %}
+{% endblock %}
