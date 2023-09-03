@@ -1,0 +1,46 @@
+.home-banner {
+  grid-column: 1/3;
+}
+
+.home-news {
+  grid-column: 3/11;
+}
+
+.home-partners{
+  grid-column: 11/3;
+}
+
+
+.home-banner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.home-banner img {
+  width: 100%; /* Адаптивная ширина изображения */
+  height: auto; /* Автоматическая высота изображения */
+  transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+.home-banner:hover img {
+  transform: scale(1.1); /* Увеличение изображения при наведении */
+}
+
+.banner-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Задний фон текста */
+  color: white; /* Цвет текста */
+  padding: 10px;
+  text-align: center;
+  opacity: 0; /* Начальная прозрачность текста */
+  transition: opacity 0.3s ease; /* Анимация появления текста */
+}
+
+.home-banner:hover .banner-text {
+  opacity: 1; /* Показать текст при наведении */
+}

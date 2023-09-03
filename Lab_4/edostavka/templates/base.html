@@ -57,22 +57,22 @@
           {% endfor %}
 
           {% if user.is_authenticated %}
-            User: {{ user.get_username }}
+            <div class="user-label">
+              <p>User: {{ user.get_username }}</p>
+            </div>
+
             <a href="{% url 'logout' %}?next={{ '' }}">Logout</a>
           {% else %}
             <a href="{% url 'products' %}">Products</a>
-{#            <a href="{% url 'register' %}">Register</a>#}
             <button id="sign-in-button" class="auth-btn">Sign in</button>
             <button id="sign-up-button" class="auth-btn">Sign up</button>
-{#            <button class="login-btn"><a href="{% url 'login' %}?next={{ '' }} ">Login</a></button>#}
           {% endif %}
       {% endblock %}
         </div>
       </div>
 
       <div class="content">
-        <div class="col-sm-10 ">{% block content %}{% endblock %}
-        </div>
+        {% block content %}{% endblock %}
       </div>
 
     </div>
@@ -81,17 +81,13 @@
 
 
   <script>
-  // Add a click event handler to the button
   document.getElementById("sign-in-button").addEventListener("click", function() {
-    // Redirect to the login page with the 'next' parameter
     window.location.href = "{% url 'login' %}?next={{ '' }}";
   });
 </script>
 
   <script>
-  // Add a click event handler to the button
   document.getElementById("sign-up-button").addEventListener("click", function() {
-    // Redirect to the login page with the 'next' parameter
     window.location.href = "{% url 'register' %}?next={{ '' }}";
   });
 </script>
