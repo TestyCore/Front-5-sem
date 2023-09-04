@@ -29,8 +29,7 @@
 {#        updateDateTime();#}
 {#        setInterval(updateDateTime, 1000);#}
 {#      </script>#}
-
-      <div class="nav-bar">
+    <div class="nav-bar">
           {% block sidebar %}
             <div class="nav-bar-logo">
               <a href="{% url 'index' %}"><img src="{% static 'edostavka/images/edostavka-logo.png' %}" alt="edostavka logo"></a>
@@ -73,18 +72,23 @@
         </div>
       </div>
 
+    <div class="content-wrapper">
       <div class="content">
-        {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
       </div>
+    </div>
+
+
+
 
     </div>
   </body>
 
   <footer class="footer">
-{#        <div class="footer-content">#}
-{#            <h2>Contact Us</h2>#}
-{#            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>#}
-{#        </div>#}
+        <div class="footer-content">
+            <h2>Contact Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
     <div class="footer-contacts">
 
       <div class="social-media">

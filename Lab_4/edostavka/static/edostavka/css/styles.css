@@ -3,11 +3,11 @@
     padding: 0;
 }
 
-/*body {*/
-/*    min-height: 100vh;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
+.content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 html{
      background-color: rgb(251, 236, 220);
@@ -70,6 +70,7 @@ html{
 
 .content {
     margin: 6em 4em;
+    flex-grow: 1;
 }
 
 .user-label{
@@ -84,7 +85,9 @@ html{
     color: #fff;
     padding: 2em 4em ;
     align-items: center;
-    bottom: 0;
+    height: 35vh;
+    /*position: absolute;*/
+    /*bottom: 0;*/
 }
 .footer-policy p{
     font-size: 13px;
