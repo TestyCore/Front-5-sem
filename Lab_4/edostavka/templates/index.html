@@ -5,33 +5,63 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/home.css'%}"/>
 
+<div class="home-content">
 
-  <div class="home-banner">
-    <a href="https://mak.by/ru/vyibiraj-svoe-trio-za-5,5-rub.!.html" target="_blank"><img src="../static/edostavka/images/mac-by-5f5.png" alt="Ad Banner"></a>
-    <div class="banner-text">
-      <p>Перейти на mac.by</p>
+  <div class="home-partners">
+    <div class="partners-logo">
+      <a href="https://evroopt.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/logo.svg" alt=""></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://groshyk.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/grishik.svg" alt=""></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://emall.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/logo_emall.svg" alt=""></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://evropochta.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/pochta_logo2.svg" alt=""></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://hitdiscount.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/hit-logo21-red2.svg" alt=""></a>
     </div>
   </div>
 
   <div class="home-news">
-    <h1>eDostavka Home</h1>
+    <div class="news-title">
+      <h1>Пусть осень принесет свои плоды! Стартовал сентябрьский тур игры «Удача в придачу!»</h1>
+    </div>
+    <div class="news-title">
+      <p>01 сентября 2023</p>
+    </div>
+    <div class="news-img">
+      <a href="https://edostavka.by/news/167" target="_blank"><img src="{% static 'edostavka/images/e-news.png' %}" alt=""></a>
+    </div>
     <p>
-      Welcome to eDostavka, a website developed by
-      <em>Mozilla Developer Network</em>!
+      1 сентября начинается новый, 183-й, тур народной игры «Удача в придачу!». Покупатели магазинов «Евроопт», «Хит!» и онлайн-гипермаркета «Едоставка» сами убедятся, что первый месяц осени может стать феноменально «урожайным», если будут верить в свою фортуну. В розыгрыше, как всегда, «призы мечты»!
     </p>
-    <h2>Dynamic content</h2>
-    <p>The site has the following record counts:</p>
-    <ul>
-      <li><strong>Products:</strong> {{ num_products }}</li>
-      <li><strong>Manufacturers:</strong> {{ num_manufacturers }}</li>
-      <li><strong>Quote:</strong> {{ quote }}</li>
-    </ul>
   </div>
 
-  <div class="home-partners">
+  <div class="home-banner">
 
+      <div class="banner-1">
+          <a href="https://evroopt.by/redprice/vse-tovary/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-1.jpeg' %}" alt="Ad Banner"></a>
+      </div>
 
+      <div class="banner-2">
+          <a href="https://evroopt.by/gril-fest/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-2.jpeg' %}" alt="Ad Banner"></a>
+      </div>
+
+      <div class="banner-3">
+          <a href="https://evroopt.by/jobs/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-3.jpeg' %}" alt="Ad Banner"></a>
+      </div>
+
+      <div class="banner-4">
+          <a href="https://evroopt.by/deals/worldexpert/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-4.jpeg' %}" alt="Ad Banner"></a>
+      </div>
+
+      <div class="banner-5">
+          <a href="https://evroopt.by/ryba/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-5.gif' %}" alt="Ad Banner"></a>
+      </div>
+    </div>
 
 </div>
-
 {% endblock %}

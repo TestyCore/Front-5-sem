@@ -14,6 +14,10 @@ html{
     display: flex;
     justify-content: space-between;
     background-color: rgb(56, 54, 54);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .nav-list {
@@ -59,13 +63,27 @@ html{
 }
 
 .content {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    margin: 0.5em;
+    margin: 6em 4em;
 }
 
 .user-label{
     display: flex;
     align-items: center;
-    color: #2fc039;
+    color: green;
+    margin-right: 0.7em;
+}
+
+.footer {
+    background-color: #373436;
+    color: #fff;
+    padding: 2em 4em ;
+    align-items: center;
+}
+.footer-policy p{
+    font-size: 13px;
+}
+
+.footer-social {
+    flex: 1;
+    text-align: right;
 }
