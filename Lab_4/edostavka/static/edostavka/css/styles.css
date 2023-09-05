@@ -13,10 +13,7 @@ html{
      background-color: rgb(251, 236, 220);
 }
 
-.main {
-}
-
-.nav-bar {
+nav {
     display: flex;
     justify-content: space-between;
     background-color: rgb(56, 54, 54);
@@ -28,6 +25,30 @@ html{
 
 .nav-list {
     display: flex;
+}
+
+.nav-list i {
+    color: aliceblue;
+}
+
+.drop {
+    width: 4em;
+}
+
+.drop i {
+    width: 4em;
+    color: aliceblue;
+}
+
+.drop-list {
+    display: none;
+}
+
+.drop:hover .drop-list{
+    display: block;
+    top: 3.2em;
+    position: absolute;
+    background-color: rgb(56, 54, 54);
 }
 
 .nav-list a{
@@ -81,13 +102,11 @@ html{
 }
 
 .footer {
+    display: inline-block;
     background-color: #373436;
     color: #fff;
     padding: 2em 4em ;
     align-items: center;
-    height: 35vh;
-    /*position: absolute;*/
-    /*bottom: 0;*/
 }
 .footer-policy p{
     font-size: 13px;

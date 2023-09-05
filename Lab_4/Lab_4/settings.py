@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'order.apps.OrderConfig',
     'administrator',
     'client_list',
+    'back_info'
 ]
 
 MIDDLEWARE = [

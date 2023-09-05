@@ -7,6 +7,7 @@ from Lab_4 import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('back_info/', include('back_info.urls', namespace='back_info')),
     path('cart/', include('cart.urls', namespace='cart')),
     path('order/', include('order.urls', namespace='order')),
     path('client_list/', include('client_list.urls', namespace='client_list')),

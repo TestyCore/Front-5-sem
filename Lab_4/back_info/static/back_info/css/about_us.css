@@ -1,0 +1,43 @@
+.about-us-page {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.about-us-info {
+    grid-column: 1/10;
+}
+
+.about-us-info>h2 {
+    font-size: 3em;
+
+}
+
+.about-us-info>img {
+    margin: 1em 0;
+    width: 100%;
+}
+
+.time-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.goods-amount {
+    grid-column: 1/2;
+}
+
+.min-time {
+    grid-column: 2/3;
+}
+
+.max-time {
+    grid-column: 3/4;
+}
+
+.video {
+    margin-top: 2em;
+}
+
+.video video {
+    width: 100%;
+}

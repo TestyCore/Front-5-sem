@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'edostavka/css/styles.css' %}?v=2" type="text/css" >
+    <link rel="stylesheet" href="{% static 'edostavka/css/styles.css' %}?v=3" type="text/css" >
     <link rel="icon" href="{% static 'edostavka/images/e-logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'edostavka/fonts/fontawesome/css/all.min.css' %}">
   {% endblock %}
@@ -28,12 +28,24 @@
 {#        updateDateTime();#}
 {#        setInterval(updateDateTime, 1000);#}
 {#      </script>#}
-    <div class="nav-bar">
-          {% block sidebar %}
-            <div class="nav-bar-logo">
-              <a href="{% url 'index' %}"><img src="{% static 'edostavka/images/edostavka-logo.png' %}" alt="edostavka logo"></a>
+
+    <nav>
+      {% block sidebar %}
+        <div class="nav-bar-logo">
+          <a href="{% url 'index' %}"><img src="{% static 'edostavka/images/edostavka-logo.png' %}" alt="edostavka logo"></a>
+        </div>
+        <div class="nav-list">
+          <div class="drop">
+            <a href="#">Info</a>
+            <div class="drop-list">
+              <a href="{% url 'back_info:about_us' %}">About us</a>
+              <a href="{% url 'back_info:news' %}">News</a>
+              <a href="{% url 'back_info:terms_conditions' %}">Terms and definitions</a>
+              <a href="{% url 'back_info:contacts' %}">Contacts</a>
+              <a href="{% url 'back_info:policy' %}">Policy</a>
+              <a href="{% url 'back_info:reviews' %}">Reviews</a>
             </div>
-            <div class="nav-list">
+          </div>
           <a href="{% url 'index' %}">Home</a>
           {% for group in user.groups.all %}
             {% if group.name == 'Customer' %}
@@ -60,16 +72,16 @@
               <p>User: {{ user.get_username }}</p>
             </div>
 
-{#            <a href="{% url 'logout' %}?next={{ '' }}">Logout</a>#}
+    {#            <a href="{% url 'logout' %}?next={{ '' }}">Logout</a>#}
             <button id="log-out-button" class="auth-btn">Log out</button>
           {% else %}
             <a href="{% url 'products' %}">Products</a>
             <button id="sign-in-button" class="auth-btn">Sign in</button>
             <button id="sign-up-button" class="auth-btn">Sign up</button>
           {% endif %}
-      {% endblock %}
+          {% endblock %}
         </div>
-      </div>
+      </nav>
 
     <div class="content-wrapper">
       <div class="content">
