@@ -1,10 +1,14 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
     Products
 {% endblock %}
 
 {% block content %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/products.css'%}"/>
+
   <h1>Products</h1>
     <form method="get">
       <label for="filter_type">Filter by:</label>
@@ -21,15 +25,30 @@
       <button type="submit">Filter</button>
     </form>
   {% if product_list %}
-    <ul>
       {% for product in product_list %}
-      <li>
-        <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
-        ({{product.price}})
-      </li>
+        <div class="card">
+          <img src="{% static 'edostavka/images/mac-by-5f5.png' %}" alt="mac" style="width:100%">
+          <h1>{{ product.title }}</h1>
+          <p class="price">${{product.price}}</p>
+          <p>Some text about the jeans..</p>
+          <p><button class="buy-button" data-url="{{ product.get_absolute_url }}">Add to Cart</button></p>
+        </div>
+
+
+        <script>
+          document.addEventListener("click", function (event) {
+            if (event.target.classList.contains("buy-button")) {
+                window.location.href = event.target.getAttribute("data-url");
+            }
+          });
+        </script>
+{#        <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>#}
+{#        ({{product.price}})#}
+
       {% endfor %}
-    </ul>
   {% else %}
     <p>There are no products in the store.</p>
   {% endif %}
 {% endblock %}
+
+
