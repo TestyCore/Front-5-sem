@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/products.css'%}"/>
 
   <h1>Products</h1>
+
     <form method="get">
       <label for="filter_type">Filter by:</label>
       <select name="filter_type" id="filter_type">
@@ -24,7 +25,9 @@
       </select>
       <button type="submit">Filter</button>
     </form>
-  {% if product_list %}
+
+  <div class="product-list">
+    {% if product_list %}
       {% for product in product_list %}
         <div class="card">
           <img src="{% static 'edostavka/images/mac-by-5f5.png' %}" alt="mac" style="width:100%">
@@ -46,9 +49,11 @@
 {#        ({{product.price}})#}
 
       {% endfor %}
-  {% else %}
-    <p>There are no products in the store.</p>
-  {% endif %}
+    {% else %}
+      <p>There are no products in the store.</p>
+    {% endif %}
+  </div>
+
 {% endblock %}
 
 
