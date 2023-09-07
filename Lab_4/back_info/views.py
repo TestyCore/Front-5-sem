@@ -29,3 +29,33 @@ def policy(request):
 def reviews(request):
 
     return render(request, 'back_info/reviews.html')
+
+
+def news_0(request):
+
+    return render(request, 'back_info/news_0.html')
+
+
+def news_1(request):
+
+    return render(request, 'back_info/news_1.html')
+
+
+def news_2(request):
+
+    return render(request, 'back_info/news_2.html')
+
+
+def news_3(request):
+
+    return render(request, 'back_info/news_3.html')
+
+
+def news_4(request):
+
+    return render(request, 'back_info/news_4.html')
+
+
+def news_5(request):
+
+    return render(request, 'back_info/news_5.html')

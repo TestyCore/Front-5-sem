@@ -97,21 +97,27 @@ class OrderListView(generic.ListView):
 
 
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     total_cost = Order.objects.aggregate(total=Sum('items__price')).get('total')
-    #     order_count = Order.objects.count()
-    #     average_cost = total_cost / order_count if order_count > 0 else 0
-    #     order_prices = Order.objects.values_list('items__price', flat=True)
-    #     mode_cost = mode(order_prices) if order_prices else 0
-    #
-    #     most_common_item = Order.objects.values('items__product__title').annotate(
-    #         count=Count('items__product__title')).order_by('-count').first()
-    #     most_common_item_name = most_common_item['items__product__title'] if most_common_item else ''
-    #
-    #     context['total_cost'] = "{:.2f}".format(total_cost or 0)
-    #     context['average_cost'] = "{:.2f}".format(average_cost or 0)
-    #     context['mode_cost'] = "{:.2f}".format(mode_cost or 0)
-    #     context['most_common_item_name'] = most_common_item_name
-    #
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        orders = Order.objects.all()
+        total_cost = 0
+        for order in orders:
+            total_cost = total_cost + order.get_total_cost()
+
+        print(total_cost)
+        order_count = Order.objects.count()
+        print(order_count)
+        average_cost = total_cost / order_count if order_count > 0 else 0
+        order_prices = Order.objects.values_list('items__price', flat=True)
+        mode_cost = mode(order_prices) if order_prices else 0
+
+        most_common_item = Order.objects.values('items__product__title').annotate(
+            count=Count('items__product__title')).order_by('-count').first()
+        most_common_item_name = most_common_item['items__product__title'] if most_common_item else ''
+
+        context['total_cost'] = "{:.2f}".format(total_cost or 0)
+        context['average_cost'] = "{:.2f}".format(average_cost or 0)
+        context['mode_cost'] = "{:.2f}".format(mode_cost or 0)
+        context['most_common_item_name'] = most_common_item_name
+
+        return context

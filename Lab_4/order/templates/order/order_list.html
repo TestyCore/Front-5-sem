@@ -18,7 +18,7 @@
               <li>No products.</li>
             {% endfor %}
           </ul>
-{#          <a style="font-weight: bold">Total: ${{ order.get_total_cost }}</a>#}
+          <a style="font-weight: bold">Total: ${{ order.get_total_cost }}</a>
         </li>
       {% empty %}
         <li>No orders found.</li>
@@ -26,10 +26,10 @@
     </ul>
 
 
-{#    <a style="font-weight: bold">Total: ${{ total_cost }}</a>#}
-{#    <a style="font-weight: bold">Average: ${{ average_cost }}</a>#}
-{#    <a style="font-weight: bold">Mode: ${{ mode_cost }}</a>#}
-{#    <a style="font-weight: bold">Most Common: ${{ most_common_item_name }}</a>#}
+    <a style="font-weight: bold">Total: ${{ total_cost }}</a>
+    <a style="font-weight: bold">Average: ${{ average_cost }}</a>
+    <a style="font-weight: bold">Mode: ${{ mode_cost }}</a>
+    <a style="font-weight: bold">Most Common: ${{ most_common_item_name }}</a>
 
   {% else %}
     <p>There are no orders.</p>
