@@ -1,4 +1,30 @@
 {% extends "base.html" %}
+
+{% load static %}
+
 {% block content %}
-<p>terms_definitions</p>
+
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/terms_definitions.css' %}"/>
+
+<div class="t_and_d_page">
+  <article>
+
+    <section class="header">
+      <div class="title">
+        <h1>Вопрос-ответ</h1>
+      </div>
+      <div class="description">
+        <p>Данный раздел содержит ответы на наиболее распространенные вопросы о работе интернет-магазина и процедуре оформления заказа.</p>
+        <p>Пожалуйста, выберите интересующий вас подраздел ниже, чтобы посмотреть соответствующий перечень вопросов и ответов.</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="title">
+        <h2>Все вопросы</h2>
+      </div>
+    </section>
+  </article>
+
+</div>
 {% endblock %}

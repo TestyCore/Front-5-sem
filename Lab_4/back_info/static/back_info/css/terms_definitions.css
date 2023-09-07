@@ -1,0 +1,15 @@
+.t_and_d_page .header .title {
+    font-size: 2em;
+}
+
+.t_and_d_page .header .description {
+    margin:1em 0;
+}
+
+.t_and_d_page .header .description p{
+    margin-bottom:1em;
+}
+
+.t_and_d_page .content .title {
+    margin: 5em 0 1em;
+}

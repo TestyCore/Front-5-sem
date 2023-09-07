@@ -89,7 +89,7 @@ nav {
   background-color: #444444;
 }
 
-.content {
+.content-wrapper>.content {
     margin: 6em 4em;
     flex-grow: 1;
 }
