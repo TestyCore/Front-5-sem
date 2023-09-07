@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news.css' %}?v=4"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news.css' %}?v=6"/>
 
 <div class="news-page">
   <article class="news-content">
@@ -12,7 +12,7 @@
 
     <div class="main-news">
         <div class="main-news-img">
-          <a href="{% url 'back_info:news_0' %}"><img src="{% static 'back_info/images/news-0.jpeg' %}" alt=""></a>
+          <a href="{% url 'back_info:news_5' %}"><img src="{% static 'back_info/images/news-5.jpeg' %}?v=2" alt=""></a>
 
           <div class="main-news-descr">
             <span class="light-gray">28 марта 2023</span>
@@ -26,12 +26,12 @@
 
       <div class="news-list">
         <h2>Популярные новости</h2>
-        <a href="">Пусть осень принесет свои плоды! Стартовал сентябрьский тур игры «Удача в придачу!»<span class="light-gray">&ensp;01 сентября 2023</span></a>
-        <a href="">1+1 на Edostavka<span class="light-gray">&ensp;28 августа 2023</span></a>
-        <a href="">Итальянские травы в подарок от Edostavka.by и Gurmina!<span class="light-gray">&ensp;16 августа 2023</span></a>
-        <a href="">Всё для любимых покупателей!<span class="light-gray">&ensp;09 августа 2023</span></a>
-        <a href="">Просто звёзды сошлись!<span class="light-gray">&ensp;09 августа 2023</span></a>
-        <a href="">Приятный подарок от Edostavka<span class="light-gray">&ensp;08 августа 2023</span></a>
+        <a href="{% url 'back_info:news_5' %}">Пусть осень принесет свои плоды! Стартовал сентябрьский тур игры «Удача в придачу!»<span class="light-gray">&ensp;01 сентября 2023</span></a>
+        <a href="{% url 'back_info:news_0' %}">1+1 на Edostavka<span class="light-gray">&ensp;28 августа 2023</span></a>
+        <a href="{% url 'back_info:news_1' %}">Итальянские травы в подарок от Edostavka.by и Gurmina!<span class="light-gray">&ensp;16 августа 2023</span></a>
+        <a href="{% url 'back_info:news_2' %}">Всё для любимых покупателей!<span class="light-gray">&ensp;09 августа 2023</span></a>
+        <a href="{% url 'back_info:news_3' %}">Просто звёзды сошлись!<span class="light-gray">&ensp;09 августа 2023</span></a>
+        <a href="{% url 'back_info:news_4' %}">Приятный подарок от Edostavka<span class="light-gray">&ensp;08 августа 2023</span></a>
       </div>
     </div>
 
@@ -39,107 +39,77 @@
     <div class="all-news">
       <h2>Все новости</h2>
 
-      <div class="news-card">
-        <div class="news-img">
-          <img src="{% static 'back_info/images/news-1.jpeg' %}" alt="">
+      <a class="news-card-link" href="{% url 'back_info:news_0' %}">
+        <div class="news-card">
+          <div class="news-img">
+            <img src="{% static 'back_info/images/news-0.jpeg' %}?v=2" alt="">
+          </div>
+          <div class="news-descr">
+            <span class="light-gray">28 августа 2023</span>
+            <br>
+            <br>
+            <h4>1+1 на Edostavka</h4>
+          </div>
         </div>
-        <div class="news-descr">
-          <span class="light-gray">28 августа 2023</span>
-          <br>
-          <br>
-          <h4>1+1 на Edostavka</h4>
-        </div>
-      </div>
+      </a>
 
-      <div class="news-card">
-        <div class="news-img">
-          <img src="{% static 'back_info/images/news-2.jpeg' %}" alt="">
+      <a class="news-card-link" href="{% url 'back_info:news_1' %}">
+        <div class="news-card">
+          <div class="news-img">
+            <img src="{% static 'back_info/images/news-1.jpeg' %}?v=2" alt="">
+          </div>
+          <div class="news-descr">
+            <span class="light-gray">16 августа 2023</span>
+            <br>
+            <br>
+            <h4>Итальянские травы в подарок от Edostavka.by и Gurmina!</h4>
+          </div>
         </div>
-        <div class="news-descr">
-          <span class="light-gray">16 августа 2023</span>
-          <br>
-          <br>
-          <h4>Итальянские травы в подарок от Edostavka.by и Gurmina!</h4>
-        </div>
-      </div>
+      </a>
 
-      <div class="news-card">
-        <div class="news-img">
-          <img src="{% static 'back_info/images/news-3.jpeg' %}" alt="">
+      <a class="news-card-link" href="{% url 'back_info:news_2' %}">
+        <div class="news-card">
+          <div class="news-img">
+            <img src="{% static 'back_info/images/news-2.jpeg' %}?v=2" alt="">
+          </div>
+          <div class="news-descr">
+            <span class="light-gray">09 августа 2023</span>
+            <br>
+            <br>
+            <h4>Всё для любимых покупателей!</h4>
+          </div>
         </div>
-        <div class="news-descr">
-          <span class="light-gray">09 августа 2023</span>
-          <br>
-          <br>
-          <h4>Всё для любимых покупателей!</h4>
-        </div>
-      </div>
+      </a>
 
-      <div class="news-card">
-        <div class="news-img">
-          <img src="{% static 'back_info/images/news-4.jpeg' %}" alt="">
+      <a class="news-card-link" href="{% url 'back_info:news_3' %}">
+        <div class="news-card">
+          <div class="news-img">
+            <img src="{% static 'back_info/images/news-3.jpeg' %}?v=2" alt="">
+          </div>
+          <div class="news-descr">
+            <span class="light-gray">09 августа 2023</span>
+            <br>
+            <br>
+            <h4>Просто звёзды сошлись!</h4>
+          </div>
         </div>
-        <div class="news-descr">
-          <span class="light-gray">09 августа 2023</span>
-          <br>
-          <br>
-          <h4>Просто звёзды сошлись!</h4>
-        </div>
-      </div>
+      </a>
 
-      <div class="news-card">
-        <div class="news-img">
-          <img src="{% static 'back_info/images/news-5.jpeg' %}" alt="">
+      <a class="news-card-link" href="{% url 'back_info:news_4' %}">
+        <div class="news-card">
+          <div class="news-img">
+            <img src="{% static 'back_info/images/news-4.jpeg' %}?v=2" alt="">
+          </div>
+          <div class="news-descr">
+            <span class="light-gray">08 августа 2023</span>
+            <br>
+            <br>
+            <h4>Приятный подарок от Edostavka</h4>
+          </div>
         </div>
-        <div class="news-descr">
-          <span class="light-gray">08 августа 2023</span>
-          <br>
-          <br>
-          <h4>Приятный подарок от Edostavka</h4>
-        </div>
-      </div>
-
+      </a>
     </div>
-{##}
-{#    <div class="news-card">#}
-{#      <div class="news-img">#}
-{#        <img src="{% static 'back_info/images/news-2.jpeg' %}" alt="">#}
-{#      </div>#}
-{#      <details>#}
-{#        <summary>Title</summary>#}
-{#        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut autem, deserunt dignissimos doloremque earum eius eligendi eveniet fugit libero modi natus necessitatibus nemo nisi nostrum optio pariatur quia quod recusandae repellat repudiandae sint ut vero. Animi beatae consectetur, eos fugiat iste nemo nisi officiis porro quae quaerat repellendus sapiente sit tempore vel, veritatis voluptate voluptatem. A ab accusamus adipisci, corporis cum delectus dicta dolor dolorem ducimus explicabo facere fugit laboriosam neque nobis nostrum nulla odio optio perferendis repellat sequi sunt, totam voluptates voluptatibus. A assumenda atque beatae laborum reiciendis. Ab alias animi at, aut dolorem dolores harum hic illo, ipsa ipsam laudantium magnam neque nihil non quia recusandae soluta vel voluptates! Ab amet asperiores aspernatur aut autem cum debitis deserunt dolor enim eos ex fuga fugiat impedit ipsam iusto maiores molestias, non porro quas rem repellat repellendus sequi tempora unde vel veritatis vitae voluptates? A ab, aliquam beatae consequatur distinctio dolore excepturi fugiat harum illo illum ipsum laboriosam odit optio pariatur placeat porro possimus quia quidem quis ratione. Accusantium architecto aspernatur atque delectus deserunt dicta dolore labore mollitia nihil nisi, nostrum, pariatur perspiciatis possimus praesentium quam quisquam quod recusandae rem repellat reprehenderit temporibus veniam voluptatem? Doloribus fugit minus quae.#}
-{#      </details>#}
-{#    </div>#}
-{##}
-{#    <div class="news-card">#}
-{#      <div class="news-img">#}
-{#        <img src="{% static 'back_info/images/news-3.jpeg' %}" alt="">#}
-{#      </div>#}
-{#      <details>#}
-{#        <summary>Title</summary>#}
-{#        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut autem, deserunt dignissimos doloremque earum eius eligendi eveniet fugit libero modi natus necessitatibus nemo nisi nostrum optio pariatur quia quod recusandae repellat repudiandae sint ut vero. Animi beatae consectetur, eos fugiat iste nemo nisi officiis porro quae quaerat repellendus sapiente sit tempore vel, veritatis voluptate voluptatem. A ab accusamus adipisci, corporis cum delectus dicta dolor dolorem ducimus explicabo facere fugit laboriosam neque nobis nostrum nulla odio optio perferendis repellat sequi sunt, totam voluptates voluptatibus. A assumenda atque beatae laborum reiciendis. Ab alias animi at, aut dolorem dolores harum hic illo, ipsa ipsam laudantium magnam neque nihil non quia recusandae soluta vel voluptates! Ab amet asperiores aspernatur aut autem cum debitis deserunt dolor enim eos ex fuga fugiat impedit ipsam iusto maiores molestias, non porro quas rem repellat repellendus sequi tempora unde vel veritatis vitae voluptates? A ab, aliquam beatae consequatur distinctio dolore excepturi fugiat harum illo illum ipsum laboriosam odit optio pariatur placeat porro possimus quia quidem quis ratione. Accusantium architecto aspernatur atque delectus deserunt dicta dolore labore mollitia nihil nisi, nostrum, pariatur perspiciatis possimus praesentium quam quisquam quod recusandae rem repellat reprehenderit temporibus veniam voluptatem? Doloribus fugit minus quae.#}
-{#      </details>#}
-{#    </div>#}
-{##}
-{#    <div class="news-card">#}
-{#      <div class="news-img">#}
-{#        <img src="{% static 'back_info/images/news-4.jpeg' %}" alt="">#}
-{#      </div>#}
-{#      <details>#}
-{#        <summary>Title</summary>#}
-{#         luptate voluptatem. A ab accusamus adipisci, corporis cum delectus dicta dolor dolorem ducimus explicabo facere fugit laboriosam neque nobis nostrum nulla odio optio perferendis repellat sequi sunt, totam voluptates voluptatibus. A assumenda atque beatae laborum reiciendis. Ab alias animi at, aut dolorem dolores harum hic illo, ipsa ipsam laudantium magnam neque nihil non quia recusandae soluta vel voluptates! Ab amet asperiores aspernatur aut autem cum debitis deserunt dolor enim eos ex fuga fugiat impedit ipsam iusto maiores molestias, non porro quas rem repellat repellendus sequi tempora unde vel veritatis vitae voluptates? A ab, aliquam beatae consequatur distinctio dolore excepturi fugiat harum illo illum ipsum laboriosam odit optio pariatur placeat porro possimus quia quidem quis ratione. Accusantium architecto aspernatur atque delectus deserunt dicta dolore labore mollitia nihil nisi, nostrum, pariatur perspiciatis possimus praesentium quam quisquam quod recusandae rem repellat reprehenderit temporibus veniam voluptatem? Doloribus fugit minus quae.#}
-{#      </details>#}
-{#    </div>#}
-{##}
-{#    <div class="news-card">#}
-{#      <div class="news-img">#}
-{#        <img src="{% static 'back_info/images/news-5.jpeg' %}" alt="">#}
-{#      </div>#}
-{#      <details>#}
-{#        <summary>Title</summary>#}
-{#        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aut autem, deserunt dignissimos doloremque earum eius eligendi eveniet fugit libero modi natus necessitatibus nemo nisi nostrum optio pariatur quia quod recusandae repellat repudiandae sint ut vero. Animi beatae consectetur, eos fugiat iste nemo nisi officiis porro quae quaerat repellendus sapiente sit tempore vel, veritatis voluptate voluptatem. A ab accusamus adipisci, corporis cum delectus dicta dolor dolorem ducimus explicabo facere fugit laboriosam neque nobis nostrum nulla odio optio perferendis repellat sequi sunt, totam voluptates voluptatibus. A assumenda atque beatae laborum reiciendis. Ab alias animi at, aut dolorem dolores harum hic illo, ipsa ipsam laudantium magnam neque nihil non quia recusandae soluta vel voluptates! Ab amet asperiores aspernatur aut autem cum debitis deserunt dolor enim eos ex fuga fugiat impedit ipsam iusto maiores molestias, non porro quas rem repellat repellendus sequi tempora unde vel veritatis vitae voluptates? A ab, aliquam beatae consequatur distinctio dolore excepturi fugiat harum illo illum ipsum laboriosam odit optio pariatur placeat porro possimus quia quidem quis ratione. Accusantium architecto aspernatur atque delectus deserunt dicta dolore labore mollitia nihil nisi, nostrum, pariatur perspiciatis possimus praesentium quam quisquam quod recusandae rem repellat reprehenderit temporibus veniam voluptatem? Doloribus fugit minus quae.#}
-{#      </details>#}
-{#    </div>#}
+
   </article>
 
 

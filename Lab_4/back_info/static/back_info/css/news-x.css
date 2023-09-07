@@ -19,6 +19,7 @@
 
 .news_x_content .img img {
     width: 100%;
+    border-radius: 0.5em;
 }
 
 .news_x_content .news_x_text {
@@ -45,7 +46,6 @@
     text-decoration: none;
     color: black;
     display: block;
-
 }
 
 .news-list .news-card {
@@ -62,7 +62,6 @@
 }
 .news-list .news-card .card-img:hover img{
     transform: scale(1.05);
-    /*cursor: pointer;*/
 }
 
 .news-card .card-descr {

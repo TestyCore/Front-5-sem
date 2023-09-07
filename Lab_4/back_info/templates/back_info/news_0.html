@@ -1,18 +1,19 @@
 {% extends "base.html" %}
-
+{% block title %}1+1 Edostavka{% endblock %}
 {% load static %}
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news-x.css' %}?v=3"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news-x.css' %}?v=4"/>
 
 <div class="news_x_page">
   <article class="news_x_content">
-    <h1>1+1 на Edostavka</h1>
-    <span class="light_gray">28 августа 2023</span>
+    <h1>{% block news-title %}1+1 на Edostavka{% endblock %}</h1>
+    <span class="light_gray">{% block news-date %}28 августа 2023{% endblock %}</span>
     <div class="img">
-      <img src="{% static 'back_info/images/news-1.jpeg' %}" alt="">
+      {% block news-img %}<img src="{% static 'back_info/images/news-0.jpeg' %}?v=2" alt="">{% endblock %}
     </div>
+    {% block news-text %}
     <section class="news_x_text">
       <br>
       <p>C 28 по 30 августа «1+1» на Edostavka!</p>
@@ -29,14 +30,16 @@
       <br>
       <p>Важно! Скорректировать количество товаров можно в корзине.</p>
     </section>
-
+    {% endblock %}
     <div class="news-selection">
       <h2>Вас может заинтересовать</h2>
       <div class="news-list">
+
+        {% block news-1 %}
         <a class="news-card-link" href="{% url 'back_info:news_1' %}">
           <div class="news-card">
             <div class="card-img">
-              <img src="{% static 'back_info/images/news-2.jpeg' %}" alt="">
+              <img src="{% static 'back_info/images/news-1.jpeg' %}?v=2" alt="">
             </div>
             <div class="card-descr">
               <span class="light_gray">16 августа 2023</span>
@@ -46,10 +49,13 @@
             </div>
           </div>
         </a>
+        {% endblock %}
+
+        {% block news-2 %}
         <a class="news-card-link" href="{% url 'back_info:news_2' %}">
           <div class="news-card">
             <div class="card-img">
-              <img src="{% static 'back_info/images/news-3.jpeg' %}" alt="">
+              <img src="{% static 'back_info/images/news-2.jpeg' %}?v=2" alt="">
             </div>
             <div class="card-descr">
               <span class="light_gray">09 августа 2023</span>
@@ -59,10 +65,13 @@
             </div>
           </div>
         </a>
+        {% endblock %}
+
+        {% block news-3 %}
         <a class="news-card-link" href="{% url 'back_info:news_3' %}">
           <div class="news-card">
             <div class="card-img">
-              <img src="{% static 'back_info/images/news-4.jpeg' %}" alt="">
+              <img src="{% static 'back_info/images/news-3.jpeg' %}?v=2" alt="">
             </div>
             <div class="card-descr">
               <span class="light_gray">09 августа 2023</span>
@@ -72,10 +81,13 @@
             </div>
           </div>
         </a>
+        {% endblock %}
+
+        {% block news-4 %}
         <a class="news-card-link" href="{% url 'back_info:news_4' %}">
           <div class="news-card">
             <div class="card-img">
-              <img src="{% static 'back_info/images/news-5.jpeg' %}" alt="">
+              <img src="{% static 'back_info/images/news-4.jpeg' %}?v=2" alt="">
             </div>
             <div class="card-descr">
               <span class="light_gray">08 августа 2023</span>
@@ -85,6 +97,8 @@
             </div>
           </div>
         </a>
+        {% endblock %}
+
       </div>
     </div>
   </article>

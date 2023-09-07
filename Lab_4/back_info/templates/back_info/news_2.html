@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends "back_info/news_0.html" %}
+{% block title %}Всё для любимых покупателей!{% endblock %}
+{% load static %}
 
-</body>
-</html>
+  {% block news-title %}Всё для любимых покупателей!{% endblock %}
+  {% block news-date %}09 августа 2023{% endblock %}
+  {% block news-img %}<img src="{% static 'back_info/images/news-2.jpeg' %}?v=2" alt="">{% endblock %}
+  {% block news-text %}
+    <section class="news_x_text">
+      <br>
+      <p>Ещё больше скидок на Edostavka! Только с 10 по 20 августа!</p>
+      <br>
+      <br>
+      <p>При сумме корзины от 150 рублей в разделе "Оформление заказа" Вам откроется доступ к набору популярных товаров со скидками до 30%!</p>
+      <p>Вы сможете добавить любой из этих товаров или даже все сразу, по 1 единице каждого.</p>
+      <br>
+      <p>Выбранные товары автоматически добавятся к Вашему заказу.
+Акция действует при наличии товара на складе.</p>
+      <br>
+      <p>Стоимость товаров, участвующих в акции "Скидки для своих",  не учитывается в общей сумме заказа при расчёте условий для доступа к закрытому разделу скидок.</p>
+    </section>
+  {% endblock %}
+
+  {% block news-2 %}
+    <a class="news-card-link" href="{% url 'back_info:news_0' %}">
+      <div class="news-card">
+        <div class="card-img">
+          <img src="{% static 'back_info/images/news-0.jpeg' %}?v=2" alt="">
+        </div>
+        <div class="card-descr">
+          <span class="light_gray">28 августа 2023</span>
+          <br>
+          <br>
+          <h4>1+1 на Edostavka</h4>
+        </div>
+      </div>
+    </a>
+  {% endblock %}

@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+{% extends "back_info/news_0.html" %}
+{% block title %}Важно!{% endblock %}
+{% load static %}
 
-</body>
-</html>
+  {% block news-title %}Важно!{% endblock %}
+  {% block news-date %}28 марта 2023{% endblock %}
+  {% block news-img %}<img src="{% static 'back_info/images/news-5.jpeg' %}?v=2" alt="">{% endblock %}
+  {% block news-text %}
+    <section class="news_x_text">
+      <br>
+      <p>Друзья, мы хотим быть для Вас идеальным гипермаркетом с быстрой доставкой.</p>
+      <br>
+      <p>Поэтому с 28 марта вносим некоторые изменения в свою работу.</p>
+      <br>
+      <p>Мы концентрируем усилия сервиса на том, чтобы предложить Вам разнообразные и качественные продукты и товары повседневного спроса.</p>
+      <br>
+      <p>Выгодных и приятных покупок на Edostavka и Emall!</p>
+    </section>
+  {% endblock %}
+
+  {% block news-4 %}
+    <a class="news-card-link" href="{% url 'back_info:news_0' %}">
+      <div class="news-card">
+        <div class="card-img">
+          <img src="{% static 'back_info/images/news-0.jpeg' %}?v=2" alt="">
+        </div>
+        <div class="card-descr">
+          <span class="light_gray">28 августа 2023</span>
+          <br>
+          <br>
+          <h4>1+1 на Edostavka</h4>
+        </div>
+      </div>
+    </a>
+  {% endblock %}

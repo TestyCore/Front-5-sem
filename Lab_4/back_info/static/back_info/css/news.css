@@ -66,11 +66,17 @@
     transition: transform 0.3s ease;
 }
 
-.all-news .news-card {
+.all-news .news-card-link {
+    text-decoration: none;
+    color: black;
     margin: 1em;
+}
+
+.all-news .news-card {
     background-color: rgb(237, 218, 200);
     border-radius: 0.8em;
     overflow: hidden;
+    height: 100%;
 }
 
 .news-card .news-descr {
@@ -80,17 +86,3 @@
 .all-news .news-card:hover img{
     transform: scale(1.05);
 }
-
-/*.all-news .news-card:not(:last-child) {*/
-/*    margin-right: 1em; !* Add margin to the right except for the last card *!*/
-/*}*/
-
-/*.news-page img{*/
-/*    width: 100%;*/
-/*    border-radius: 1em;*/
-/*    transition: transform 0.3s ease;*/
-/*}*/
-
-/*.news-page .news-img:hover img {*/
-/*    transform: scale(1.03);*/
-/*}*/
