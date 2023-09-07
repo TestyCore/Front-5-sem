@@ -13,3 +13,30 @@
 .t_and_d_page .content .title {
     margin: 5em 0 1em;
 }
+
+.t_and_d_page .content .questions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2em;
+}
+
+.questions-grid .question {
+    box-shadow: 0 -22px 21px -18px rgba(141,133,124,0.3);
+}
+
+.questions-grid .question summary {
+     padding: 1.5em 0 0;
+     cursor: pointer;
+}
+
+.questions-grid .question p {
+    margin-top: 1.5em;
+}
+.questions-grid .question details {
+     padding: 0 0 1.5em;
+     cursor: pointer;
+}
+
+.questions-grid .question .date {
+    color: gray;
+}
