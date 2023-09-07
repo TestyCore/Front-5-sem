@@ -4,9 +4,91 @@
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news-x.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news-x.css' %}?v=3"/>
 
+<div class="news_x_page">
+  <article class="news_x_content">
+    <h1>1+1 на Edostavka</h1>
+    <span class="light_gray">28 августа 2023</span>
+    <div class="img">
+      <img src="{% static 'back_info/images/news-1.jpeg' %}" alt="">
+    </div>
+    <section class="news_x_text">
+      <br>
+      <p>C 28 по 30 августа «1+1» на Edostavka!</p>
+      <br>
+      <br>
+      <h4>КАК ЭТО РАБОТАЕТ НА EDOSTAVKA?</h4>
+      <br>
+      <p>1. В период проведения акции добавьте товар из подборки в корзину, указав необходимое число к заказу.
+Минимальное количество для участия в акции = 2шт.  Обязательно указывайте общее число товаров, которое будет в Вашем заказе.</p>
+      <br>
+      <p>2. Акция распространяется только на пару из 2 одинаковых товаров. </p>
+      <br>
+      <p>3. Итоговая сумма с учётом скидки будет отображена на странице оформления заказа. В корзине Вы увидите стоимость без учёта акции.</p>
+      <br>
+      <p>Важно! Скорректировать количество товаров можно в корзине.</p>
+    </section>
 
-  <h1>1+1 на Edostavka</h1>
-  <span class="light-gray">28 августа 2023</span>
+    <div class="news-selection">
+      <h2>Вас может заинтересовать</h2>
+      <div class="news-list">
+        <a class="news-card-link" href="{% url 'back_info:news_1' %}">
+          <div class="news-card">
+            <div class="card-img">
+              <img src="{% static 'back_info/images/news-2.jpeg' %}" alt="">
+            </div>
+            <div class="card-descr">
+              <span class="light_gray">16 августа 2023</span>
+              <br>
+              <br>
+              <h4>Итальянские травы в подарок от Edostavka.by и Gurmina!</h4>
+            </div>
+          </div>
+        </a>
+        <a class="news-card-link" href="{% url 'back_info:news_2' %}">
+          <div class="news-card">
+            <div class="card-img">
+              <img src="{% static 'back_info/images/news-3.jpeg' %}" alt="">
+            </div>
+            <div class="card-descr">
+              <span class="light_gray">09 августа 2023</span>
+              <br>
+              <br>
+              <h4>Всё для любимых покупателей!</h4>
+            </div>
+          </div>
+        </a>
+        <a class="news-card-link" href="{% url 'back_info:news_3' %}">
+          <div class="news-card">
+            <div class="card-img">
+              <img src="{% static 'back_info/images/news-4.jpeg' %}" alt="">
+            </div>
+            <div class="card-descr">
+              <span class="light_gray">09 августа 2023</span>
+              <br>
+              <br>
+              <h4>Просто звёзды сошлись!</h4>
+            </div>
+          </div>
+        </a>
+        <a class="news-card-link" href="{% url 'back_info:news_4' %}">
+          <div class="news-card">
+            <div class="card-img">
+              <img src="{% static 'back_info/images/news-5.jpeg' %}" alt="">
+            </div>
+            <div class="card-descr">
+              <span class="light_gray">08 августа 2023</span>
+              <br>
+              <br>
+              <h4>Приятный подарок от Edostavka</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </article>
+
+</div>
+
 {% endblock %}
