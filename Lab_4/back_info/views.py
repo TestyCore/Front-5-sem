@@ -31,6 +31,11 @@ def reviews(request):
     return render(request, 'back_info/reviews.html')
 
 
+def openings(request):
+
+    return render(request, 'back_info/openings.html')
+
+
 def news_0(request):
 
     return render(request, 'back_info/news_0.html')

@@ -42,8 +42,9 @@
               <a href="{% url 'back_info:news' %}">News</a>
               <a href="{% url 'back_info:terms_conditions' %}">Terms and definitions</a>
               <a href="{% url 'back_info:contacts' %}">Contacts</a>
-              <a href="{% url 'back_info:policy' %}">Policy</a>
+              <a href="https://api.static.edostavka.by/policy.pdf" target="_blank">Policy</a>
               <a href="{% url 'back_info:reviews' %}">Reviews</a>
+              <a href="{% url 'back_info:openings' %}">Openings</a>
             </div>
           </div>
           <a href="{% url 'index' %}">Home</a>
@@ -152,6 +153,7 @@
     window.location.href = "{% url 'logout' %}?next={{ '' }}";
   });
 </script>
+
 
 
 {#<div class="container-fluid">#}
