@@ -31,7 +31,7 @@ def client_detail(request, client_id):
     #     ordr = ordr[2:]
     #     a = 5
 
-    orders = Order.objects.filter(client=usr.username).prefetch_related('items')
+    orders = Order.objects.filter(client=usr.id).prefetch_related('items')
 
     orders_list = [
         {
