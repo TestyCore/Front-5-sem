@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 
+from order.models import Order
+
 
 def users_profile(request):
     user = request.user
@@ -18,4 +20,14 @@ def users_profile(request):
         user.save()
         return redirect('users_profile:users_profile')
 
-    return render(request, 'users_profile/profile.html', {'user': user})
+    orders = Order.objects.filter(client=user.id).prefetch_related('items')
+
+    orders_list = [
+        {
+            'order': order.created,
+            'order_items': [[item.product.title.__str__() + ' $' + item.price.__str__() + ', ' + item.quantity.__str__() + 'pc.'] for item in order.items.all()]
+        }
+        for order in orders
+    ]
+
+    return render(request, 'users_profile/profile.html', {'user': user, 'orders': orders_list})
