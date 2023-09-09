@@ -71,7 +71,7 @@
 
           {% if user.is_authenticated %}
             <div class="user-label">
-              <p>{{ user.get_username }}</p>
+              <a href="{% url 'users_profile:users_profile' %}"><p>{{ user.get_username }}</p></a>
             </div>
 
     {#            <a href="{% url 'logout' %}?next={{ '' }}">Logout</a>#}

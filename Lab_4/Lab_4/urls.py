@@ -11,6 +11,7 @@ urlpatterns = [
     path('cart/', include('cart.urls', namespace='cart')),
     path('order/', include('order.urls', namespace='order')),
     path('client_list/', include('client_list.urls', namespace='client_list')),
+    path('users_profile/', include('users_profile.urls', namespace='users_profile')),
     path('administrator/', include('administrator.urls', namespace='administrator')),
     path('edostavka/', include('edostavka.urls')),
     path('', RedirectView.as_view(url='edostavka/')),

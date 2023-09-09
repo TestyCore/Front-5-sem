@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <h1>User Profile</h1>
+  <p><strong>Username:</strong> {{ user.username }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>First name:</strong> {{ user.first_name }}</p>
+  <p><strong>Last name:</strong> {{ user.last_name }}</p>
+
+
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <label for="last_name">Email:</label>
+    <input type="text" id="email" name="email" value="{{ user.email }}"><br>
+    <label for="last_name">Username:</label>
+    <input type="text" id="username" name="username" value="{{ user.username }}"><br>
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}"><br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}"><br>
+    <button type="submit">Save Changes</button>
+</form>
+
+{% endblock %}
