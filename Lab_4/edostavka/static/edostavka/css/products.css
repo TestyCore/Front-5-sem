@@ -3,10 +3,17 @@
   grid-template-columns: repeat(5, 1fr);
 }
 
+.products-page .header {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+
 .card {
-  max-width: 300px;
   text-align: center;
   margin: 0.5em;
+}
+.product-list .card img {
+  height: 10em;
 }
 
 .price {
