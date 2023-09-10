@@ -25,16 +25,37 @@
 
   {% if is_customer %}
     <p>My reviews</p>
-    <ul>
-        {% for rev in reviews %}
-            <li>
-            <strong>{{ rev.created }}</strong>
-                <p>{{ rev.rating }}</p>
-                <p>{{ rev.content }}</p>
-            </li>
-            <br>
-        {% endfor %}
-    </ul>
+    <section class="reviews-list">
+    {% if reviews.count == 0 %}
+        <p>No Reviews</p>
+    {% else %}
+
+      {% for review in reviews %}
+        <div class="review-record">
+          <h4>{{ review.client.username }}</h4>
+          <sup>{{ review.created.date }}</sup>
+          <br>
+          <p>{{ review.content }}</p>
+
+
+          {% with stars=review.rating  %}
+
+            {% with ''|center:stars as range %}
+
+              {% for star in range %}
+                <i class="fa fa-star checked"></i>
+              {% endfor %}
+
+            {% endwith %}
+
+          {% endwith %}
+
+        </div>
+
+      {% endfor %}
+
+    {% endif %}
+    </section>
     <a href="{% url 'back_info:reviews' %}">Write a review</a>
     <p>My orders</p>
       <ul>

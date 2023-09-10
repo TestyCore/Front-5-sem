@@ -1,8 +1,11 @@
 {% extends "base.html" %}
+
+
+
 {% load static %}
 {% block content %}
 
-  <link rel="stylesheet" type="text/css" href="{% static 'back_info/css/reviews.css'%}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'back_info/css/reviews.css'%}?v=2"/>
 
   <article class="reviews">
     <section class="header">
@@ -10,40 +13,86 @@
     </section>
 
     {% if is_customer %}
-      <br>
-      <br>
-      <br>
-        <details>
-          <summary>Write a Review</summary>
-          <section class="reviews-form">
-            <form action="" method="post">
-              {% csrf_token %}
-              {{ form.as_p }}
-              <button type="submit">Submit Review</button>
-            </form>
-          </section>
-        </details>
-      <br>
-      <br>
-      <br>
+      <details class="reviews-form">
+        <summary>Write a Review</summary>
+        <section>
+
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+
+              <div class="rate">
+                <input type="radio" id="rate_1" name="rating" value="1">
+                <label for="rate_1"><i class="fa fa-star checked"></i></label>
+              </div>
+              <div class="rate">
+                <input type="radio" id="rate_2" name="rating" value="2">
+                <label for="rate_2"><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i></label>
+              </div>
+              <div class="rate">
+                <input type="radio" id="rate_3" name="rating" value="3">
+                <label for="rate_3"><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i></label>
+              </div>
+              <div class="rate">
+                <input type="radio" id="rate_4" name="rating" value="4">
+                <label for="rate_4"><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i></label>
+              </div>
+              <div class="rate">
+                <input type="radio" id="rate_5" name="rating" value="5">
+                <label for="rate_5"><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star checked"></i></label>
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <label for="content">Content:</label>
+              <br>
+              <textarea id="content" name="content" rows="4" cols="50"></textarea>
+            </div>
+
+            <button type="submit">Submit Review</button>
+          </form>
+
+        </section>
+      </details>
     {% elif not user.is_authenticated %}
       <a href="{% url 'login' %}">Login to write a review</a>
 
     {% endif %}
 
+
+
+
     <section class="reviews-list">
     {% if reviews.count == 0 %}
         <p>No Reviews</p>
-      {% else %}
-        {% for review in reviews %}
-          <div class="review">
-            <h4>{{ review.client.username }}</h4>
-            <p>{{ review.created }}</p>
-            <p>{{ review.content }}</p>
-            <p>Rating: {{ review.rating }}</p>
-          </div>
-        {% endfor %}
-      {% endif %}
+    {% else %}
+
+      {% for review in reviews %}
+        <div class="review-record">
+          <h4>{{ review.client.username }}</h4>
+          <sup>{{ review.created.date }}</sup>
+          <br>
+          <p>{{ review.content }}</p>
+
+
+          {% with stars=review.rating  %}
+
+            {% with ''|center:stars as range %}
+
+              {% for star in range %}
+                <i class="fa fa-star checked"></i>
+              {% endfor %}
+
+            {% endwith %}
+
+          {% endwith %}
+
+        </div>
+
+      {% endfor %}
+
+    {% endif %}
     </section>
   </article>
 {% endblock %}

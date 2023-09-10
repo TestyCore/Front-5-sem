@@ -52,13 +52,19 @@ def reviews(request):
         'form': form,
         'reviews': reviews,
         'is_customer': is_customer,
+
     }
-    return render(request, 'back_info/reviews.html',context=context)
+    return render(request, 'back_info/reviews.html', context=context)
 
 
 def openings(request):
 
     return render(request, 'back_info/openings.html')
+
+
+def coupons(request):
+
+    return render(request, 'back_info/coupons.html')
 
 
 def news_0(request):
