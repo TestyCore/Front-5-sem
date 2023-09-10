@@ -7,7 +7,7 @@
 
 {% block content %}
 
-  <link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/products.css'%}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/products.css'%}?v=2"/>
 
   <h1>Products</h1>
 
@@ -33,7 +33,6 @@
           <img src="{% static 'edostavka/images/mac-by-5f5.png' %}" alt="mac" style="width:100%">
           <h1>{{ product.title }}</h1>
           <p class="price">${{product.price}}</p>
-          <p>Some text about the jeans..</p>
           <p><button class="buy-button" data-url="{{ product.get_absolute_url }}">Add to Cart</button></p>
         </div>
 
