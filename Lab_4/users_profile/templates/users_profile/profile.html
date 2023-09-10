@@ -1,75 +1,96 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-  <h1>User Profile</h1>
-  <p><strong>Username:</strong> {{ user.username }}</p>
-  <p><strong>Email:</strong> {{ user.email }}</p>
-  <p><strong>First name:</strong> {{ user.first_name }}</p>
-  <p><strong>Last name:</strong> {{ user.last_name }}</p>
+
+  <link rel="stylesheet" href="{% static 'users_profile/css/profile.css' %}"/>
+
+  <div class="profile">
+
+    <div class="info-wrapper">
+      <section class="info">
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>First name:</strong> {{ user.first_name }}</p>
+        <p><strong>Last name:</strong> {{ user.last_name }}</p>
+      </section>
+
+      <section class="edit-info">
+        <details>
+        <summary>Edit your data</summary>
+          <form action="" method="post">
+            {% csrf_token %}
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" value="{{ user.email }}" required><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" required><br>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" required><br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" required><br>
+            <button type="submit">Save Changes</button>
+          </form>
+        </details>
+      </section>
+    </div>
 
 
 
-  <form action="" method="post">
-    {% csrf_token %}
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email" value="{{ user.email }}" required><br>
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" value="{{ user.username }}" required><br>
-    <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" required><br>
-    <label for="last_name">Last Name:</label>
-    <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" required><br>
-    <button type="submit">Save Changes</button>
-  </form>
+    <section class="reviews">
+      {% if is_customer %}
 
+      <details>
+        <summary>My reviews</summary>
+        <section class="reviews-list">
+          {% if reviews.count == 0 %}
+              <p>No Reviews</p>
+          {% else %}
 
-  {% if is_customer %}
-    <p>My reviews</p>
-    <section class="reviews-list">
-    {% if reviews.count == 0 %}
-        <p>No Reviews</p>
-    {% else %}
+            {% for review in reviews %}
+              <div class="review-record">
 
-      {% for review in reviews %}
-        <div class="review-record">
-          <h4>{{ review.client.username }}</h4>
-          <sup>{{ review.created.date }}</sup>
-          <br>
-          <p>{{ review.content }}</p>
+              {% with stars=review.rating  %}
+                {% with ''|center:stars as range %}
+                  {% for star in range %}
+                    <i class="fa fa-star checked"></i>
+                  {% endfor %}
+                {% endwith %}
+              {% endwith %}
+                <br>
+                <sup>{{ review.created.date }}</sup>
+                <br>
+                <p>{{ review.content }}</p>
 
+              </div>
 
-          {% with stars=review.rating  %}
+            {% endfor %}
 
-            {% with ''|center:stars as range %}
+          {% endif %}
+          {% endif  %}
 
-              {% for star in range %}
-                <i class="fa fa-star checked"></i>
-              {% endfor %}
+        </section>
+      </details>
+      <a href="{% url 'back_info:reviews' %}" class="rate-link">Rate us</a>
 
-            {% endwith %}
-
-          {% endwith %}
-
-        </div>
-
-      {% endfor %}
-
-    {% endif %}
     </section>
-    <a href="{% url 'back_info:reviews' %}">Write a review</a>
-    <p>My orders</p>
-      <ul>
-        {% for item in orders %}
-          <li>
-            <strong>{{ item.order }}</strong>
-              <ul>
-                {% for item in item.order_items %}
+
+    <section class="orders">
+      <details>
+        <summary>My orders</summary>
+         <ul>
+          {% for item in orders %}
+            <li>
+              <strong>{{ item.order }}</strong>
+                <ul>
+                  {% for item in item.order_items %}
                     <li>{{ item.0 }}</li>
-                {% endfor %}
-              </ul>
-            </li>
-          <br>
-        {% endfor %}
-    </ul>
-  {% endif  %}
+                  {% endfor %}
+                </ul>
+              </li>
+            <br>
+          {% endfor %}
+        </ul>
+      </details>
+    </section>
+  </div>
+
 {% endblock %}
