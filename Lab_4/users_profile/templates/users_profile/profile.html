@@ -20,22 +20,35 @@
     <label for="last_name">Last Name:</label>
     <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" required><br>
     <button type="submit">Save Changes</button>
+  </form>
 
-    <br>
-  <p>My orders</p>
+
+  {% if is_customer %}
+    <p>My reviews</p>
     <ul>
-        {% for item in orders %}
+        {% for rev in reviews %}
             <li>
-            <strong>{{ item.order }}</strong>
-                <ul>
-                    {% for item in item.order_items %}
-                        <li>{{ item.0 }}</li>
-                    {% endfor %}
-                </ul>
+            <strong>{{ rev.created }}</strong>
+                <p>{{ rev.rating }}</p>
+                <p>{{ rev.content }}</p>
             </li>
             <br>
         {% endfor %}
     </ul>
-</form>
-
+    <a href="{% url 'back_info:reviews' %}">Write a review</a>
+    <p>My orders</p>
+      <ul>
+        {% for item in orders %}
+          <li>
+            <strong>{{ item.order }}</strong>
+              <ul>
+                {% for item in item.order_items %}
+                    <li>{{ item.0 }}</li>
+                {% endfor %}
+              </ul>
+            </li>
+          <br>
+        {% endfor %}
+    </ul>
+  {% endif  %}
 {% endblock %}

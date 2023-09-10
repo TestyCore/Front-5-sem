@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from order.models import Order
+from back_info.models import Review
 
 
 def users_profile(request):
@@ -29,5 +30,14 @@ def users_profile(request):
         }
         for order in orders
     ]
+    is_customer = request.user.groups.filter(name='Customer').exists()
+    reviews = Review.objects.filter(client_id=user.id)
 
-    return render(request, 'users_profile/profile.html', {'user': user, 'orders': orders_list})
+    context = {
+        'user': user,
+        'orders': orders_list,
+        'reviews': reviews,
+        'is_customer': is_customer,
+    }
+
+    return render(request, 'users_profile/profile.html', context=context)

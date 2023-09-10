@@ -61,10 +61,11 @@
     margin: 0.6em 0;
 }
 
-.contacts-wrapper .certificate {
+.contacts-wrapper .certificates {
+    grid-column: 10/13;
 }
 
-.contacts-wrapper .certificate img{
+.contacts-wrapper .certificates img{
     width: 100%;
 }
 

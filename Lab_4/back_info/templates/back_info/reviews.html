@@ -1,4 +1,49 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'back_info/css/reviews.css'%}"/>
+
+  <article class="reviews">
+    <section class="header">
+      <h1>Reviews</h1>
+    </section>
+
+    {% if is_customer %}
+      <br>
+      <br>
+      <br>
+        <details>
+          <summary>Write a Review</summary>
+          <section class="reviews-form">
+            <form action="" method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Submit Review</button>
+            </form>
+          </section>
+        </details>
+      <br>
+      <br>
+      <br>
+    {% elif not user.is_authenticated %}
+      <a href="{% url 'login' %}">Login to write a review</a>
+
+    {% endif %}
+
+    <section class="reviews-list">
+    {% if reviews.count == 0 %}
+        <p>No Reviews</p>
+      {% else %}
+        {% for review in reviews %}
+          <div class="review">
+            <h4>{{ review.client.username }}</h4>
+            <p>{{ review.created }}</p>
+            <p>{{ review.content }}</p>
+            <p>Rating: {{ review.rating }}</p>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </section>
+  </article>
 {% endblock %}

@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from back_info.forms import ReviewForm
+from back_info.models import Review
 
 
 def about_us(request):
@@ -27,8 +30,30 @@ def policy(request):
 
 
 def reviews(request):
+    reviews = Review.objects.all()
 
-    return render(request, 'back_info/reviews.html')
+    if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return redirect('login')
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.client = request.user
+            review.save()
+            return redirect('back_info:reviews')
+    else:
+        form = ReviewForm()
+
+    is_customer = request.user.groups.filter(name='Customer').exists()
+    user = request.user
+
+    context = {
+        'user': user,
+        'form': form,
+        'reviews': reviews,
+        'is_customer': is_customer,
+    }
+    return render(request, 'back_info/reviews.html',context=context)
 
 
 def openings(request):
