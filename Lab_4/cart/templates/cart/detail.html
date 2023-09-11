@@ -58,7 +58,11 @@
       <h2 class="total-price">Total: {{ cart.get_total_price }} $</h2>
     </section>
 
-    <a href="{% url 'order:order_create' %}" class="pay-link">Checkout</a>
+    <form action="{% url 'order:order_create' %}" method="POST" class="order-form">
+      {{ form.as_p }}
+      <p><input type="submit" value="Checkout" class="pay-link"></p>
+      {% csrf_token %}
+    </form>
 
   </div>
 
