@@ -1,6 +1,8 @@
 from django.core.exceptions import PermissionDenied
 
 import requests
+from pandas.core import window
+from pygments import console
 
 from .forms import ExtendedUserCreationForm
 from .models import Product, Manufacturer

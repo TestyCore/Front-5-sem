@@ -15,26 +15,9 @@
     grid-column: 1/9;
 }
 
-.about-us-page .info>img {
+.about-us-page .info figure>img {
     margin: 1em 0;
     width: 100%;
-}
-
-.info .time-table {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.info .goods-amount {
-    grid-column: 1/2;
-}
-
-.info .min-time {
-    grid-column: 2/3;
-}
-
-.info .max-time {
-    grid-column: 3/4;
 }
 
 .info .video {
@@ -63,6 +46,10 @@
 
 .contacts-wrapper .certificates {
     grid-column: 10/13;
+}
+
+.contacts-wrapper .certificates .custom-cert{
+    background-color: wheat;
 }
 
 .contacts-wrapper .certificates img{

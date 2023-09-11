@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/about_us.css' %}?v=4"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/about_us.css' %}?v=5"/>
 
 <div class="about-us-page">
 
@@ -13,7 +13,13 @@
     </div>
 
     <article class="info">
-      <img src="{% static 'back_info/images/about_company.png' %}" alt="">
+      <figure>
+        <img src="{% static 'back_info/images/about_company.png' %}" alt="">
+        <figcaption>
+          <p>Banner</p>
+        </figcaption>
+      </figure>
+
       <p>Для жителей г. Минска (зона А, А1), доступна «Экспресс-доставка», которая позволит получить заказ в самые короткие сроки. Услуга имеет ряд очевидных преимуществ, которые вы наверняка оцените по достоинству:</p>
       <br>
       <ul>
@@ -31,17 +37,53 @@
         В зависимости от объема заказа время «Экспресс-доставки» может варьироваться:</p>
       <br>
 
-      <div class="time-table">
-        <div class="goods-amount">
-          <p>Количество товаров в заказе (шт.) <br><br> до 30 <br><br> 31-50 <br><br> 51-70 <br><br> 71-90 <br><br> и т.д. </p>
-        </div>
-        <div class="min-time">
-          <p>Минимальное время доставки (мин.) <br><br> 30 <br><br> 40 <br><br> 50 <br><br> 60 </p>
-        </div>
-        <div class="max-time">
-          <p>Максимальное время доставки (мин.) <br><br> 60 <br><br> 70 <br><br> 80 <br><br> 90 </p>
-        </div>
-      </div>
+{#      <div class="time-table">#}
+{#        <div class="goods-amount">#}
+{#          <p>Количество товаров в заказе (шт.) <br><br> до 30 <br><br> 31-50 <br><br> 51-70 <br><br> 71-90 <br><br> и т.д. </p>#}
+{#        </div>#}
+{#        <div class="min-time">#}
+{#          <p>Минимальное время доставки (мин.) <br><br> 30 <br><br> 40 <br><br> 50 <br><br> 60 </p>#}
+{#        </div>#}
+{#        <div class="max-time">#}
+{#          <p>Максимальное время доставки (мин.) <br><br> 60 <br><br> 70 <br><br> 80 <br><br> 90 </p>#}
+{#        </div>#}
+{#      </div>#}
+      <table>
+        <thead>
+        <tr>
+          <th id="quantity">Количество товаров в заказе (шт.)</th>
+          <th id="min-time">Минимальное время доставки (мин.)</th>
+          <th id="max-time">Максимальное время доставки (мин.)</th>
+        </tr>
+        <tr>
+          <td headers="quantity"><p>до 30</p></td>
+          <td headers="min-time"><p>30</p></td>
+          <td headers="max-time"><p>60</p></td>
+        </tr>
+        <tr>
+          <td headers="quantity"><p>31-50</p></td>
+          <td headers="min-time"><p>40</p></td>
+          <td headers="max-time"><p>70</p></td>
+        </tr>
+        <tr>
+          <td headers="quantity"><p>51-70</p></td>
+          <td headers="min-time"><p>50</p></td>
+          <td headers="max-time"><p>80</p></td>
+        </tr>
+        <tr>
+          <td headers="quantity"><p>71-90</p></td>
+          <td headers="min-time"><p>60</p></td>
+          <td headers="max-time"><p>90</p></td>
+        </tr>
+        <tr>
+          <td colspan="3"><p>Result</p></td>
+        </tr>
+
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
 
       <br>
       <p>Cтоимость услуги составляет 9,99 бел.рублей (Минск: зона А, А1) с учётом НДС по ставке 20%.
@@ -81,6 +123,14 @@
       </div>
 
       <div class="certificates">
+        <div class="custom-cert">
+          <p>EДИНЫЙ РЕЕСТР МАГАЗИНОВ</p>
+          <p>СВИДЕТЕЛЬСТВО</p>
+          <p>О внесении изменений</p>
+          <p>Общество с ограниченно ответственностью</p>
+          <p>Реестровый номер:131726</p>
+          <p>Директор: Коршунов</p>
+        </div>
         <h3>Certificates</h3>
         <img src="{% static 'back_info/images/certificate_1.jpeg' %}" alt="">
         <img src="{% static 'back_info/images/certificate_2.jpeg' %}" alt="">
