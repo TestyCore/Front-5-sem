@@ -72,12 +72,12 @@ nav {
 }
 
 .auth-btn {
-  background-color: #525252; /* Button background color */
-  color: aliceblue; /* Button text color */
-  padding: 5px 20px; /* Button padding */
-  font-size: 16px; /* Button font size */
-  border: 1px solid aliceblue; /* Remove the default button border */
-  border-radius: 50px; /* Rounded corners */
+  background-color: #525252;
+  color: aliceblue;
+  padding: 5px 20px;
+  font-size: 16px;
+  border: 1px solid aliceblue;
+  border-radius: 50px;
   cursor: pointer;
   margin-top: 0.8em;
   margin-right: 0.4em;

@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/about_us.css' %}?v=5"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/about_us.css' %}?v=6"/>
 
 <div class="about-us-page">
 
@@ -36,18 +36,6 @@
         <br>
         В зависимости от объема заказа время «Экспресс-доставки» может варьироваться:</p>
       <br>
-
-{#      <div class="time-table">#}
-{#        <div class="goods-amount">#}
-{#          <p>Количество товаров в заказе (шт.) <br><br> до 30 <br><br> 31-50 <br><br> 51-70 <br><br> 71-90 <br><br> и т.д. </p>#}
-{#        </div>#}
-{#        <div class="min-time">#}
-{#          <p>Минимальное время доставки (мин.) <br><br> 30 <br><br> 40 <br><br> 50 <br><br> 60 </p>#}
-{#        </div>#}
-{#        <div class="max-time">#}
-{#          <p>Максимальное время доставки (мин.) <br><br> 60 <br><br> 70 <br><br> 80 <br><br> 90 </p>#}
-{#        </div>#}
-{#      </div>#}
       <table>
         <thead>
         <tr>
@@ -97,49 +85,42 @@
 
   </article>
 
-    <div class="contacts-wrapper">
-      <div class="contacts">
-        <h3>Контакты</h3>
-        <p>Почтовый адрес ЗАО «Интернет-магазин Евроопт»: 220019, г. Минск, а/я 19
-          <br>
-          <br>
-          <br>
-          Адрес электронной почты:
-          <br>
-          info@e-dostavka.by
-          <br>
-          <br>
-          <br>
-          Телефон контакт-центра:
-          <br>
-          537-08-09 МТС, A1, life:)
-          <br>
-          Режим работы: 8:30-20:30
-          <br>
-          <br>
-          <br>
-          Вы можете связаться с нами посредством онлайн-чата на сайте, а также viber и telegram.
-        </p>
-      </div>
+  <div class="contacts-wrapper">
+    <section class="contacts" itemscope itemtype="https://schema.org/Organization">
+      <h3>Контакты</h3>
+      <p itemprop="address">Почтовый адрес ЗАО «Интернет-магазин Евроопт»: 220019, г. Минск, а/я 19 </p>
+      <br>
+      <br>
+      <p>Адрес электронной почты:</p>
+      <p itemprop="email">info@e-dostavka.by</p>
+      <br>
+      <p>Телефон контакт-центра:</p>
+      <p>537-08-09 МТС, A1, life:)</p>
+      <p itemprop="telephone">Режим работы: 8:30-20:30</p>
+      <br>
+      <br>
+      <p>Вы можете связаться с нами посредством онлайн-чата на сайте, а также viber и telegram.</p>
 
-      <div class="certificates">
-        <div class="custom-cert">
-          <p>EДИНЫЙ РЕЕСТР МАГАЗИНОВ</p>
-          <p>СВИДЕТЕЛЬСТВО</p>
-          <p>О внесении изменений</p>
-          <p>Общество с ограниченно ответственностью</p>
-          <p>Реестровый номер:131726</p>
-          <p>Директор: Коршунов</p>
-        </div>
-        <h3>Certificates</h3>
-        <img src="{% static 'back_info/images/certificate_1.jpeg' %}" alt="">
-        <img src="{% static 'back_info/images/certificate_2.jpeg' %}" alt="">
-        <img src="{% static 'back_info/images/certificate_3.jpeg' %}" alt="">
+    </section>
+
+    <section class="certificates">
+      <div class="custom-cert">
+        <p>EДИНЫЙ РЕЕСТР МАГАЗИНОВ</p>
+        <p>СВИДЕТЕЛЬСТВО</p>
+        <p>О внесении изменений</p>
+        <p>Общество с ограниченно ответственностью</p>
+        <p>Реестровый номер:131726</p>
+        <p>Директор: Коршунов</p>
       </div>
+      <h3>Certificates</h3>
+      <img src="{% static 'back_info/images/certificate_1.jpeg' %}" alt="">
+      <img src="{% static 'back_info/images/certificate_2.jpeg' %}" alt="">
+      <img src="{% static 'back_info/images/certificate_3.jpeg' %}" alt="">
+    </section>
 
     </div>
 
-    <article class="history">
+  <article class="history">
     <h2>Наша история развития</h2>
     <p><span class="year">1993</span>: Запуск бизнеса: Владимир Василько и Сергей Литвин основали компанию, основная деятельность которой – мелкооптовая торговля продуктами питания.
       <br><br>

@@ -7,14 +7,14 @@
 <link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news-x.css' %}?v=4"/>
 
 <div class="news_x_page">
-  <article class="news_x_content">
-    <h1>{% block news-title %}1+1 на Edostavka{% endblock %}</h1>
-    <span class="light_gray">{% block news-date %}28 августа 2023{% endblock %}</span>
+  <article class="news_x_content" itemscope itemtype="NewsArticle">
+    <h1 itemprop="headline">{% block news-title %}1+1 на Edostavka{% endblock %}</h1>
+    <span class="light_gray" itemprop="datePublished">{% block news-date %}28 августа 2023{% endblock %}</span>
     <div class="img">
       {% block news-img %}<img src="{% static 'back_info/images/news-0.jpeg' %}?v=2" alt="">{% endblock %}
     </div>
     {% block news-text %}
-    <section class="news_x_text">
+    <section class="news_x_text" itemprop="text">
       <br>
       <p>C 28 по 30 августа «1+1» на Edostavka!</p>
       <br>

@@ -1,4 +1,4 @@
-.home-content {
+.home-page {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }

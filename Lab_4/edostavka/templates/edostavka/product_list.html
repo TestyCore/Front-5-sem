@@ -7,7 +7,7 @@
 
 {% block content %}
 
-  <link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/products.css'%}?v=3"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/products.css'%}?v=4"/>
 
   <div class="products-page">
 
@@ -36,10 +36,10 @@
       <div class="product-list">
         {% if product_list %}
           {% for product in product_list %}
-            <div class="card">
-              <img src="{% static product.img_url %}" alt="mac" style="width:100%;" >
-              <h1>{{ product.title }}</h1>
-              <p class="price">${{product.price}}</p>
+            <div class="card" itemscope itemtype="https://schema.org/Product">
+              <img src="{% static product.img_url %}" alt="mac" itemprop="image">
+              <h1 itemprop="brand">{{ product.title }}</h1>
+              <p itemprop="price" class="price">${{product.price}}</p>
               <button class="buy-button" data-url="{{ product.get_absolute_url }}">Add to Cart</button>
             </div>
 

@@ -2,6 +2,7 @@
 
 {% block content %}
 
+  <div class="client-list">
     <h1>User List</h1>
 
     <ul>
@@ -9,6 +10,7 @@
             <li><a href="{% url 'client_list:client_detail' usr.id %}">{{ usr.username }}</a></li>
         {% endfor %}
     </ul>
+  </div>
 
 {% endblock %}
 

@@ -3,118 +3,114 @@
 
   <head>
   {% block head %}
-      <title>{% block title %}eDostavka{% endblock %}</title>
+    <title>{% block title %}eDostavka{% endblock %}</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Быстрая и удобная доставка продуктов питания и товаров для дома - это то, что нужно, чтобы сэкономить время и силы. Мы предлагаем широкий ассортимент продуктов, от бакалеи до детского питания, с доставкой по Минску и Минской области.">
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'edostavka/css/styles.css' %}?v=6" type="text/css" >
     <link rel="icon" href="{% static 'edostavka/images/e-logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'edostavka/fonts/fontawesome/css/all.min.css' %}">
-  {% endblock %}
+    {% endblock %}
 
   </head>
 
   <body>
 
-{#      <p>Current time and date: <span id="current-date-time"></span></p>#}
-{#      <script>#}
-{#        function updateDateTime() {#}
-{#          var currentDate = new Date();#}
-{#          var formattedDateTime = currentDate.toLocaleString();#}
-{#          var element = document.getElementById('current-date-time');#}
-{#          element.textContent = formattedDateTime;#}
-{#        }#}
-{##}
-{#        updateDateTime();#}
-{#        setInterval(updateDateTime, 1000);#}
-{#      </script>#}
 
-    <nav>
-      {% block sidebar %}
-        <div class="nav-bar-logo">
-          <a href="{% url 'index' %}"><img src="{% static 'edostavka/images/edostavka-logo.png' %}" alt="edostavka logo"></a>
-        </div>
-        <div class="nav-list">
-          <div class="drop">
-            <a href="#">Info</a>
-            <div class="drop-list">
-              <a href="{% url 'back_info:about_us' %}">About us</a>
-              <a href="{% url 'back_info:news' %}">News</a>
-              <a href="{% url 'back_info:terms_conditions' %}">Terms and definitions</a>
-              <a href="{% url 'back_info:contacts' %}">Contacts</a>
-              <a href="https://api.static.edostavka.by/policy.pdf" target="_blank">Policy</a>
-              <a href="{% url 'back_info:reviews' %}">Reviews</a>
-              <a href="{% url 'back_info:openings' %}">Openings</a>
-              <a href="{% url 'back_info:coupons' %}">Coupons</a>
-            </div>
+<header>
+  <nav>
+    {% block sidebar %}
+      <section class="nav-bar-logo">
+        <a href="{% url 'index' %}"><img src="{% static 'edostavka/images/edostavka-logo.png' %}" alt="edostavka logo"></a>
+      </section>
+      <section class="nav-list">
+        <div class="drop">
+          <a href="#">Info</a>
+          <div class="drop-list">
+            <a href="{% url 'back_info:about_us' %}">About us</a>
+            <a href="{% url 'back_info:news' %}">News</a>
+            <a href="{% url 'back_info:terms_conditions' %}">Terms and definitions</a>
+            <a href="{% url 'back_info:contacts' %}">Contacts</a>
+            <a href="https://api.static.edostavka.by/policy.pdf" target="_blank">Policy</a>
+            <a href="{% url 'back_info:reviews' %}">Reviews</a>
+            <a href="{% url 'back_info:openings' %}">Openings</a>
+            <a href="{% url 'back_info:coupons' %}">Coupons</a>
           </div>
-          <a href="{% url 'index' %}">Home</a>
-          {% for group in user.groups.all %}
-            {% if group.name == 'Customer' %}
-              <a href="{% url 'products' %}">Products</a>
-              <a href="{% url 'cart:cart_detail' %}">Cart</a>
-            {% endif %}
-          {% endfor %}
-
-          {% for group in user.groups.all %}
-            {% if group.name == 'Staff' %}
-              <a href="{% url 'client_list:client_list' %}">Clients</a>
-              <a href="{% url 'order:orders' %}">All orders</a>
-            {% endif %}
-          {% endfor %}
-
-          {% for group in user.groups.all %}
-            {% if group.name == 'Admin' %}
-              <a href="{% url 'administrator:list_product' %}">Administrator</a>
-            {% endif %}
-          {% endfor %}
-
-          {% if user.is_authenticated %}
-            <div class="user-label">
-              <a href="{% url 'users_profile:users_profile' %}"><p>{{ user.get_username }}</p></a>
-            </div>
-
-    {#            <a href="{% url 'logout' %}?next={{ '' }}">Logout</a>#}
-            <button id="log-out-button" class="auth-btn">Log out</button>
-          {% else %}
-{#            <a href="{% url 'products' %}">Products</a>#}
-            <button id="sign-in-button" class="auth-btn">Sign in</button>
-            <button id="sign-up-button" class="auth-btn">Sign up</button>
-          {% endif %}
-          {% endblock %}
-
-        <script>
-          document.getElementById("sign-in-button").addEventListener("click", function() {
-            window.location.href = "{% url 'login' %}?next={{ '' }}";
-          });
-        </script>
-
-        <script>
-          document.getElementById("sign-up-button").addEventListener("click", function() {
-            window.location.href = "{% url 'register' %}?next={{ '' }}";
-          });
-        </script>
-
-        <script>
-          document.getElementById("log-out-button").addEventListener("click", function() {
-            window.location.href = "{% url 'logout' %}?next={{ '' }}";
-          });
-        </script>
-
         </div>
-      </nav>
+        <a href="{% url 'index' %}">Home</a>
+        {% for group in user.groups.all %}
+          {% if group.name == 'Customer' %}
+            <a href="{% url 'products' %}">Products</a>
+            <a href="{% url 'cart:cart_detail' %}">Cart</a>
+          {% endif %}
+        {% endfor %}
 
-    <div class="content-wrapper">
-      <div class="content">
-            {% block content %}{% endblock %}
-      </div>
+        {% for group in user.groups.all %}
+          {% if group.name == 'Staff' %}
+            <a href="{% url 'client_list:client_list' %}">Clients</a>
+            <a href="{% url 'order:orders' %}">All orders</a>
+          {% endif %}
+        {% endfor %}
+
+        {% for group in user.groups.all %}
+          {% if group.name == 'Admin' %}
+            <a href="{% url 'administrator:list_product' %}">Administrator</a>
+          {% endif %}
+        {% endfor %}
+
+        {% if user.is_authenticated %}
+          <div class="user-label">
+            <a href="{% url 'users_profile:users_profile' %}"><p>{{ user.get_username }}</p></a>
+          </div>
+
+  {#            <a href="{% url 'logout' %}?next={{ '' }}">Logout</a>#}
+          <button id="log-out-button" class="auth-btn">Log out</button>
+        {% else %}
+{#            <a href="{% url 'products' %}">Products</a>#}
+          <button id="sign-in-button" class="auth-btn">Sign in</button>
+          <button id="sign-up-button" class="auth-btn">Sign up</button>
+        {% endif %}
+        {% endblock %}
+
+      <script>
+        document.getElementById("sign-in-button").addEventListener("click", function() {
+          window.location.href = "{% url 'login' %}?next={{ '' }}";
+        });
+      </script>
+
+      <script>
+        document.getElementById("sign-up-button").addEventListener("click", function() {
+          window.location.href = "{% url 'register' %}?next={{ '' }}";
+        });
+      </script>
+
+      <script>
+        document.getElementById("log-out-button").addEventListener("click", function() {
+          window.location.href = "{% url 'logout' %}?next={{ '' }}";
+        });
+      </script>
+
+      </section>
+    </nav>
+</header>
+
+
+  <main>
+   <div class="content-wrapper">
+    <div class="content">
+        {% block content %}{% endblock %}
     </div>
+  </div>
+  </main>
 
-    <footer class="footer">
-      <div class="footer-contacts">
 
-        <div class="social-media">
+  <footer class="footer">
+
+    <section class="footer-contacts">
+
+      <div class="social-media">
           <div class="social-text">
             <p>Social media</p>
           </div>
@@ -129,90 +125,37 @@
           </div>
         </div>
 
-        <div class="apps">
-          <div class="social-text">
+      <div class="apps">
+
+        <div class="social-text">
             <p>Apps</p>
           </div>
-          <div class="social-icons">
+
+        <div class="social-icons">
             <a href="https://apps.apple.com/us/app/dostavka-evroopt/id1001170523" target="_blank"><i class="fa-brands fa-apple"></i></a>
             <a href="https://play.google.com/store/apps/details?id=by.e_dostavka.edostavka" target="_blank"><i class="fa-brands fa-google-play"></i></a>
           </div>
-        </div>
+
       </div>
 
+    </section>
 
+    <section class="footer-policy">
+      <p>© 2023 Закрытое акционерное общество «Интернет-магазин Евроопт». Все права защищены. Зарегистрировано решением Минского районного исполнительного комитета от 09.06.2014 г. в Едином государственном регистре юридических лиц и индивидуальных предпринимателей. Свидетельство о государственной регистрации №691536217. УНП 691536217, место нахождения: 220019, Республика Беларусь, Минская область, Минский район, Щомыслицкий с/с, Западный промузел ТЭЦ-4, кабинет 229. Почтовый адрес ЗАО «Интернет-магазин Евроопт»: 220019, г. Минск, а/я 19. Онлайн-гипермаркет edostavka.by. Режим работы: круглосуточно. Дата регистрации в Торговом реестре: 23.06.2022 г. Адрес электронной почты: info@e-dostavka.by
+        <br>
+        <br>
+Способы оплаты товара и доставки: 1) наличными денежными средствами экспедитору; 2) банковской пластиковой карточкой экспедитору; 3) банковской пластиковой карточкой в режиме «онлайн»; 4) безналичный расчет по счету. Способы доставки товара: 1) транспортным средством продавца; 2) из пункта выдачи заказов.
+        <br>
+        <br>
+Номера уполномоченных рассматривать обращения покупателей в соответствии с законодательством об обращениях граждан и юридических лиц: Минский районный исполнительный комитет, отдел торговли и услуг: +375 17 270-29-14, +375 17 270 33 75. Номер и адрес электронной почты лица, уполномоченного рассматривать обращения покупателей о нарушении их прав, предусмотренных законодательством о защите прав потребителей: +375 29 106 63 58, obr@e-dostavka.by. ЗАО «Интернет-магазин Евроопт» не рассматривает электронные обращения и не предоставляет ответы на них. Продажа через Интернет-магазин (онлайн-гипермаркет) алкогольной и табачной продукции запрещена законодательством Республики Беларусь. Политика обработки персональных данных.
+        <br>
+        <br>
+Настройка согласия на файлы cookie</p>
+    </section>
 
-      <div class="footer-policy">
-        <p>© 2023 Закрытое акционерное общество «Интернет-магазин Евроопт». Все права защищены. Зарегистрировано решением Минского районного исполнительного комитета от 09.06.2014 г. в Едином государственном регистре юридических лиц и индивидуальных предпринимателей. Свидетельство о государственной регистрации №691536217. УНП 691536217, место нахождения: 220019, Республика Беларусь, Минская область, Минский район, Щомыслицкий с/с, Западный промузел ТЭЦ-4, кабинет 229. Почтовый адрес ЗАО «Интернет-магазин Евроопт»: 220019, г. Минск, а/я 19. Онлайн-гипермаркет edostavka.by. Режим работы: круглосуточно. Дата регистрации в Торговом реестре: 23.06.2022 г. Адрес электронной почты: info@e-dostavka.by
-          <br>
-          <br>
-  Способы оплаты товара и доставки: 1) наличными денежными средствами экспедитору; 2) банковской пластиковой карточкой экспедитору; 3) банковской пластиковой карточкой в режиме «онлайн»; 4) безналичный расчет по счету. Способы доставки товара: 1) транспортным средством продавца; 2) из пункта выдачи заказов.
-          <br>
-          <br>
-  Номера уполномоченных рассматривать обращения покупателей в соответствии с законодательством об обращениях граждан и юридических лиц: Минский районный исполнительный комитет, отдел торговли и услуг: +375 17 270-29-14, +375 17 270 33 75. Номер и адрес электронной почты лица, уполномоченного рассматривать обращения покупателей о нарушении их прав, предусмотренных законодательством о защите прав потребителей: +375 29 106 63 58, obr@e-dostavka.by. ЗАО «Интернет-магазин Евроопт» не рассматривает электронные обращения и не предоставляет ответы на них. Продажа через Интернет-магазин (онлайн-гипермаркет) алкогольной и табачной продукции запрещена законодательством Республики Беларусь. Политика обработки персональных данных.
-          <br>
-          <br>
-  Настройка согласия на файлы cookie</p>
-      </div>
-    </footer>
+  </footer>
 
-  </body>
+</body>
 
 
 </html>
-
-
-
-{#<div class="container-fluid">#}
-{#      <div class="row">#}
-{#        <div class="col-sm-2">#}
-{#          {% block sidebar %}#}
-{#            <ul class="sidebar-nav">#}
-{#            <p>Current time and date: <span id="current-date-time"></span></p>#}
-{#             <script>#}
-{#                function updateDateTime() {#}
-{#                    var currentDate = new Date();#}
-{#                    var formattedDateTime = currentDate.toLocaleString();#}
-{#                    var element = document.getElementById('current-date-time');#}
-{#                    element.textContent = formattedDateTime;#}
-{#                }#}
-{#                updateDateTime();#}
-{#                setInterval(updateDateTime, 1000);#}
-{#            </script>#}
-{#              <li><a href="{% url 'index' %}">Home</a></li>#}
-{#                {% for group in user.groups.all %}#}
-{#                    {% if group.name == 'Customer' %}#}
-{#                        <li><a href="{% url 'products' %}">Products</a></li>#}
-{#                        <li><a href="{% url 'cart:cart_detail' %}">Cart</a></li>#}
-{#                    {% endif %}#}
-{#                {% endfor %}#}
-{##}
-{#                {% for group in user.groups.all %}#}
-{#                    {% if group.name == 'Staff' %}#}
-{#                        <li><a href="{% url 'client_list:client_list' %}">Clients</a></li>#}
-{#                        <li><a href="{% url 'order:orders' %}">All orders</a></li>#}
-{#                    {% endif %}#}
-{#                {% endfor %}#}
-{##}
-{#                {% for group in user.groups.all %}#}
-{#                    {% if group.name == 'Admin' %}#}
-{#                        <li><a href="{% url 'administrator:list_product' %}">Administrator</a></li>#}
-{#                    {% endif %}#}
-{#                {% endfor %}#}
-{##}
-{#                {% if user.is_authenticated %}#}
-{#                    <li>User: {{ user.get_username }}</li>#}
-{#                    <li><a href="{% url 'logout' %}?next={{ '' }}">Logout</a></li>#}
-{#                {% else %}#}
-{#                    <li><a href="{% url 'products' %}">Products</a></li>#}
-{#                    <li><a href="{% url 'register' %}">Register</a></li>#}
-{#                    <li><a href="{% url 'login' %}?next={{ '' }} ">Login</a></li>#}
-{#                {% endif %}#}
-{##}
-{#            </ul>#}
-{#          {% endblock %}#}
-{#        </div>#}
-{#        <div class="col-sm-10 ">{% block content %}{% endblock %}#}
-{#        </div>#}
-{#      </div>#}
-{#    </div>#}

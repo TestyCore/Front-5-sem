@@ -4,25 +4,25 @@
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news.css' %}?v=6"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news.css' %}?v=8"/>
 
 <div class="news-page">
-  <article class="news-content">
+  <div class="news-content">
     <h1>Новости</h1>
 
-    <div class="main-news">
-        <div class="main-news-img">
-          <a href="{% url 'back_info:news_5' %}"><img src="{% static 'back_info/images/news-5.jpeg' %}?v=2" alt=""></a>
+    <section class="main-news">
+      <div class="main-news-img">
+        <a href="{% url 'back_info:news_5' %}"><img src="{% static 'back_info/images/news-5.jpeg' %}?v=2" alt=""></a>
 
-          <div class="main-news-descr">
-            <span class="light-gray">28 марта 2023</span>
-            <br>
-            <br>
-            <h4>Важно!</h4>
-            <br>
-            <span class="light-gray">Обновление условий доставки</span>
-          </div>
+        <div class="main-news-descr">
+          <span class="light-gray">28 марта 2023</span>
+          <br>
+          <br>
+          <h4>Важно!</h4>
+          <br>
+          <span class="light-gray">Обновление условий доставки</span>
         </div>
+      </div>
 
       <div class="news-list">
         <h2>Популярные новости</h2>
@@ -33,10 +33,10 @@
         <a href="{% url 'back_info:news_3' %}">Просто звёзды сошлись!<span class="light-gray">&ensp;09 августа 2023</span></a>
         <a href="{% url 'back_info:news_4' %}">Приятный подарок от Edostavka<span class="light-gray">&ensp;08 августа 2023</span></a>
       </div>
-    </div>
+    </section>
 
 
-    <div class="all-news">
+    <section class="all-news">
       <h2>Все новости</h2>
 
       <a class="news-card-link" href="{% url 'back_info:news_0' %}">
@@ -108,9 +108,9 @@
           </div>
         </div>
       </a>
-    </div>
+    </section>
 
-  </article>
+  </div>
 
 
 

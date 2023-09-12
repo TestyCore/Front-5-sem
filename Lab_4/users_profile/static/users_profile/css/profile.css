@@ -1,28 +1,28 @@
-.profile {
+.profile-page {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
 
-.profile .info-wrapper {
+.profile-page .info-wrapper {
     grid-column: 1/4;
     margin: 1em 0;
     font-size: 1.2em;
 }
 
-.profile .edit-info {
+.profile-page .edit-info {
     margin: 1em 0;
 }
 
-.profile .reviews {
+.profile-page .reviews {
     grid-column: 5/9;
     margin: 1em 0;
 }
 
-.profile .orders {
+.profile-page .orders {
     grid-column: 9/13;
     margin: 1em 0;
 }
-.profile .rate-link {
+.profile-page .rate-link {
     display: inline-block;
     margin-top: 0.5em;
     padding: 10px 20px;

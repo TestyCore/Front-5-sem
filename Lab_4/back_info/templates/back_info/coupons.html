@@ -4,13 +4,23 @@
 
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/coupons.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/coupons.css' %}?v=2"/>
 
-<div class="coupons">
-  <div class="header">
+<div class="coupons-page">
+  <section class="header">
     <h1>Купоны</h1>
-  </div>
+  </section>
+  <section class="active">
+     <p>Действующие:</p>
      <p>"5050" - Скидка 5% на первую доставку</p>
+  </section>
+  <br>
+  <br>
+  <section class="expired">
+     <p>Истекшие:</p>
+     <p>"7070" - Скидка 15% на достаку от 100 рублей и выше</p>
+  </section>
+
 
 {#  <img srcset="{% static 'edostavka/images/milk.png' %} 1x,#}
 {#               {% static 'edostavka/images/cola.jpg' %} 2x,#}
