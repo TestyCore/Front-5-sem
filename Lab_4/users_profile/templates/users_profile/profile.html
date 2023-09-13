@@ -58,7 +58,8 @@
                 {% endwith %}
               {% endwith %}
                 <br>
-                <sup>{{ review.created.date }}</sup>
+                <sup>{{ review.created }}</sup>
+                <br>
                 <br>
                 <p>{{ review.content }}</p>
 
@@ -81,7 +82,7 @@
          <ul>
           {% for item in orders %}
             <li>
-              <strong>{{ item.order }}</strong>
+              <strong>Minsk: {{ item.order_time_Minsk }} (UTC: {{ item.order_time_UTC }})</strong>
                 <ul>
                   {% for item in item.order_items %}
                     <li>{{ item.0 }}</li>

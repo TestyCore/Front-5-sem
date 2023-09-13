@@ -1,5 +1,4 @@
-
-
+from django.db.models import Count
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from order.models import Order
@@ -12,24 +11,13 @@ def client_list(request):
     usrs = usrs.exclude(username="Asik")
     usrs = usrs.exclude(username="Batya")
 
+
     return render(request, 'client_list/client_list.html', {'usrs': usrs})
 
 
 def client_detail(request, client_id):
     usrs = User.objects.all()
     usr = usrs.filter(id=client_id).first()
-    # ordrs = Order.objects.all()
-    # ordrs = [[item.id, item.client, item.created] for item in ordrs]
-    #
-    # order_items = OrderItem.objects.all()
-    #
-    # for ordr in ordrs:
-    #     items = order_items.filter(order_id=ordr[0])
-    #     items = list(items)
-    #     items = items[1:4]
-    #     ordr.append(items)
-    #     ordr = ordr[2:]
-    #     a = 5
 
     orders = Order.objects.filter(client=usr.id).prefetch_related('items')
 
@@ -40,9 +28,21 @@ def client_detail(request, client_id):
         }
         for order in orders
     ]
-    a = 5
 
-    return render(request, 'client_list/client_detail.html', {'usr': usr, 'ordrs': orders_list})
+    data = (
+        Order.objects.annotate(day_count=Count('created'))
+        .values('created', 'day_count')
+        .order_by('created')
+    )
+
+    # dates = [entry['created'] for entry in data]
+    # sales_count = [entry['day_count'] for entry in data]
+
+    dates = ['2023-09-01', '2023-09-02', '2023-09-03']
+
+    sales_count = [10, 15, 20]
+
+    return render(request, 'client_list/client_detail.html', {'usr': usr, 'ordrs': orders_list, 'dates': dates, 'sales_count': sales_count})
 
 
 
