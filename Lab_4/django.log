@@ -1,0 +1,64 @@
+INFO 2023-09-14 02:19:16,144 Watching for file changes with StatReloader
+DEBUG 2023-09-14 02:19:17,163 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:19:17,327 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 02:19:25,087 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:19:25,253 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 02:19:34,796 Starting new HTTPS connection (1): api.yookassa.ru:443
+DEBUG 2023-09-14 02:19:35,060 https://api.yookassa.ru:443 "POST /v3/payments HTTP/1.1" 200 518
+INFO 2023-09-14 02:19:35,065 Purchase completed!
+DEBUG 2023-09-14 02:20:26,297 Starting new HTTPS connection (1): api.yookassa.ru:443
+DEBUG 2023-09-14 02:20:26,583 https://api.yookassa.ru:443 "POST /v3/payments HTTP/1.1" 200 518
+INFO 2023-09-14 02:20:26,585 Purchase completed!
+INFO 2023-09-14 02:28:21,624 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/order/views.py changed, reloading.
+INFO 2023-09-14 02:28:22,007 Watching for file changes with StatReloader
+DEBUG 2023-09-14 02:28:29,674 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:28:29,833 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 02:28:47,095 Product was modified
+DEBUG 2023-09-14 02:29:18,795 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:29:18,955 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 02:35:04,143 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/users_profile/views.py changed, reloading.
+INFO 2023-09-14 02:35:04,416 Watching for file changes with StatReloader
+DEBUG 2023-09-14 02:35:18,224 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:35:18,406 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 02:35:36,789 New rate was created
+INFO 2023-09-14 02:43:26,569 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/edostavka/views.py changed, reloading.
+INFO 2023-09-14 02:43:26,790 Watching for file changes with StatReloader
+DEBUG 2023-09-14 02:45:34,899 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:45:35,076 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 41
+DEBUG 2023-09-14 02:45:37,150 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:45:37,354 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 02:50:33,303 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/edostavka/views.py changed, reloading.
+INFO 2023-09-14 02:50:33,569 Watching for file changes with StatReloader
+DEBUG 2023-09-14 02:50:33,803 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 02:50:33,807 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 02:50:33,807 interactive is False
+DEBUG 2023-09-14 02:50:33,807 platform is darwin
+DEBUG 2023-09-14 02:50:33,838 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 02:50:33,839 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 02:50:39,458 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:50:39,635 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 02:50:39,688 Loaded backend macosx version unknown.
+INFO 2023-09-14 02:58:22,403 Watching for file changes with StatReloader
+DEBUG 2023-09-14 02:58:22,520 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 02:58:22,523 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 02:58:22,523 interactive is False
+DEBUG 2023-09-14 02:58:22,524 platform is darwin
+DEBUG 2023-09-14 02:58:22,569 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 02:58:22,570 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 02:58:23,755 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:58:23,922 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 30
+DEBUG 2023-09-14 02:58:26,092 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:58:26,263 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 02:58:47,037 User profile info was changed
+DEBUG 2023-09-14 02:58:53,164 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:58:53,333 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 02:59:10,205 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:59:10,413 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 02:59:26,269 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:59:26,433 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 02:59:30,429 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:59:30,615 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 02:59:31,310 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:59:31,460 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 02:59:31,747 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 02:59:31,923 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None

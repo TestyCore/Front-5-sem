@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load tz %}
 {% block content %}
 
   <link rel="stylesheet" href="{% static 'users_profile/css/profile.css' %}?v=4"/>
@@ -58,11 +59,10 @@
                 {% endwith %}
               {% endwith %}
                 <br>
-                <sup>{{ review.created }}</sup>
-                <br>
+                <sup>{{ review.created|date:"d-m-Y H:i:s" }} ({{ review.created|timezone:"UTC"|date:"d-m-Y H:i:s e" }})</sup>
                 <br>
                 <p>{{ review.content }}</p>
-
+                <br>
               </div>
 
             {% endfor %}
@@ -82,7 +82,7 @@
          <ul>
           {% for item in orders %}
             <li>
-              <strong>Minsk: {{ item.order_time_Minsk }} (UTC: {{ item.order_time_UTC }})</strong>
+            <strong>{{ item.date|date:"d-m-Y H:i:s" }} ({{ item.date|timezone:"UTC"|date:"d-m-Y H:i:s e" }})</strong><br>
                 <ul>
                   {% for item in item.order_items %}
                     <li>{{ item.0 }}</li>

@@ -5,6 +5,10 @@ from back_info.forms import ReviewForm
 from back_info.models import Review
 
 
+import logging
+logger = logging.getLogger(__name__)
+
+
 def about_us(request):
 
     try:
@@ -54,6 +58,7 @@ def reviews(request):
             review = form.save(commit=False)
             review.client = request.user
             review.save()
+            logger.info('New rate was created')
             return redirect('back_info:reviews')
     else:
         form = ReviewForm()

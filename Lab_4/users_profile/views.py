@@ -7,6 +7,10 @@ from datetime import datetime, timedelta
 import pytz
 
 
+import logging
+logger = logging.getLogger(__name__)
+
+
 def users_profile(request):
     user = request.user
 
@@ -22,22 +26,20 @@ def users_profile(request):
         user.username = username
 
         user.save()
+        logger.info('User profile info was changed')
         return redirect('users_profile:users_profile')
 
     orders = Order.objects.filter(client=user.id).prefetch_related('items')
 
     orders_list = [
         {
-            'order_time_Minsk': order.created,
-            'order_time_UTC': order.created - timedelta(hours=3),
+            'date': order.created,
             'order_items': [[item.product.title.__str__() + ' $' + item.price.__str__() + ', ' + item.quantity.__str__() + 'pc.'] for item in order.items.all()]
         }
         for order in orders
     ]
     is_customer = request.user.groups.filter(name='Customer').exists()
     reviews = Review.objects.filter(client_id=user.id)
-    for review in reviews:
-        review.created = 'Minsk: ' + review.created.date().__str__() + ', UTC: ' + (review.created.date() - timedelta(hours=3)).__str__()
 
     desired_timezone = pytz.timezone('Europe/Minsk')
     timezone.activate(desired_timezone)

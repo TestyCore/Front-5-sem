@@ -12,6 +12,10 @@ from .templates import administrator
 from edostavka.models import Product
 
 
+import logging
+logger = logging.getLogger(__name__)
+
+
 @user_passes_test(lambda user: user.groups.filter(name='Admin').exists())
 def index(request):
     products = Product.objects.all()
@@ -30,6 +34,7 @@ class ProductCreate(UserPassesTestMixin, View):
         form = ProductForm(request.POST)
         if form.is_valid():
             form.save()
+            logger.info('New product created!')
             return redirect('administrator:list_product')
         return render(request, 'administrator/create_product.html', {'form': form})
 
@@ -48,6 +53,7 @@ class ProductEdit(UserPassesTestMixin, View):
         form = ProductForm(request.POST, instance=product)
         if form.is_valid():
             form.save()
+            logger.info('Product was modified')
             return redirect('administrator:list_product')
         return render(request, 'administrator/edit_product.html', {'product': product, 'form': form})
 
@@ -56,6 +62,7 @@ class ProductDelete(UserPassesTestMixin, View):
     def get(self, request, id):
         product = get_object_or_404(Product, id=id)
         product.delete()
+        logger.info('Product was deleted')
         return redirect('administrator:list_product')
 
     def test_func(self):

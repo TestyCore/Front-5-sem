@@ -14,6 +14,10 @@ from cart.cart import Cart
 from django.core.exceptions import PermissionDenied
 
 
+import logging
+logger = logging.getLogger(__name__)
+
+
 def order_create(request):
     if not request.user.is_authenticated:
         raise PermissionDenied("net dostpa")
@@ -29,16 +33,12 @@ def order_create(request):
                                      product=item['product'],
                                      price=item['price'],
                                      quantity=item['quantity'])
-            # item['product'].price += item['quantity']
             item['product'].save()
 
-        # cart.clear()
+        url = "https://api.yookassa.ru/v3/payments"
 
-        #
-        url = "https://api.yookassa.ru/v3/payments"  # Replace with the YooKassa API endpoint
-
-        shop_id = "318870"  # Replace with your actual shopId
-        secret_key = "test_e6oCux8C5T90AegU9ba_zWHoW0BDVkiQowMv9xV4Ha0"  # Replace with your actual secret API key
+        shop_id = "318870"
+        secret_key = "test_e6oCux8C5T90AegU9ba_zWHoW0BDVkiQowMv9xV4Ha0"
 
         headers = {
             "Authorization": "Basic " + base64.b64encode(f"{shop_id}:{secret_key}".encode("utf-8")).decode("utf-8"),
@@ -55,12 +55,14 @@ def order_create(request):
             "confirmation": {
                 "type": "redirect",
                 "return_url": "http://127.0.0.1:8000/edostavka/products/",
-                "confirm_url": "https://localhost:7185/Cart/Index"  # Add the cancel URL here
+                "confirm_url": "https://localhost:7185/Cart/Index"
             }
         }
 
         response = requests.post(url, headers=headers, data=json.dumps(payload))
         response_data = response.json()
+
+        logger.info('Purchase completed!')
 
         cart.clear()
 
@@ -68,15 +70,8 @@ def order_create(request):
             redirect_url = response_data["confirmation"]["confirmation_url"]
             return redirect(redirect_url)
         else:
-            # Handle the error response
-            # You can access the error details from the response_data
-            # and take appropriate action
+            logger.error('Purchase Failed')
             raise Exception("Failed to initiate payment. Error: " + response.text)
-        #
-        #
-        #
-        # return render(request, 'order/created.html',
-        #                {'order': order})
 
     return render(request, 'order/create.html', {'cart': cart})
 
@@ -84,18 +79,6 @@ def order_create(request):
 class OrderListView(generic.ListView):
     model = Order
     queryset = Order.objects.order_by('client')
-
-
-
-
-
-
-
-
-
-
-
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
