@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 
 from order.models import Order
 from back_info.models import Review
-
+from django.utils import timezone
+import pytz
 
 def users_profile(request):
     user = request.user
@@ -33,11 +34,18 @@ def users_profile(request):
     is_customer = request.user.groups.filter(name='Customer').exists()
     reviews = Review.objects.filter(client_id=user.id)
 
+    desired_timezone = pytz.timezone('Europe/Minsk')
+    timezone.activate(desired_timezone)
+    current_datetime = timezone.now()
+    current_timezone = timezone.get_current_timezone()
+
     context = {
         'user': user,
         'orders': orders_list,
         'reviews': reviews,
         'is_customer': is_customer,
+        'current_datetime': current_datetime,
+        'current_timezone': current_timezone
     }
 
     return render(request, 'users_profile/profile.html', context=context)

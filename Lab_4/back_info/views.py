@@ -1,3 +1,4 @@
+import requests
 from django.shortcuts import render, redirect
 
 from back_info.forms import ReviewForm
@@ -6,7 +7,20 @@ from back_info.models import Review
 
 def about_us(request):
 
-    return render(request, 'back_info/about_us.html')
+    try:
+        response = requests.get('https://api.kanye.rest/')
+        if response.status_code == 200:
+            data = response.json()
+            quote = data["quote"]
+        else:
+            quote = "Failed to retrieve quote."
+    except:
+        quote = ""
+
+    context = {
+        'quote': quote}
+
+    return render(request, 'back_info/about_us.html', context=context)
 
 
 def news(request):
