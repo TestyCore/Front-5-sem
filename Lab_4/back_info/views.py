@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 
 from back_info.forms import ReviewForm
 from back_info.models import Review
+from back_info.models import News
 
 
 import logging
@@ -88,29 +89,35 @@ def coupons(request):
 
 def news_0(request):
 
-    return render(request, 'back_info/news_0.html')
+    news = News.objects.all().first()
+
+    return render(request, 'back_info/news_0.html', {'news': news})
 
 
 def news_1(request):
 
-    return render(request, 'back_info/news_1.html')
+    news = News.objects.all()[1]
+
+    return render(request, 'back_info/news_1.html', {'news': news})
 
 
 def news_2(request):
+    news = News.objects.all()[2]
 
-    return render(request, 'back_info/news_2.html')
+    return render(request, 'back_info/news_2.html', {'news': news})
 
 
 def news_3(request):
+    news = News.objects.all()[3]
 
-    return render(request, 'back_info/news_3.html')
+    return render(request, 'back_info/news_3.html', {'news': news})
 
 
 def news_4(request):
-
-    return render(request, 'back_info/news_4.html')
+    news = News.objects.all()[4]
+    return render(request, 'back_info/news_4.html', {'news': news})
 
 
 def news_5(request):
-
-    return render(request, 'back_info/news_5.html')
+    news = News.objects.all()[5]
+    return render(request, 'back_info/news_5.html', {'news': news})

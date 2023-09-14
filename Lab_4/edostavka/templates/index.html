@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block title %} Home {% endblock %}
 {% block content %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/home.css'%}?v=2"/>
@@ -27,16 +27,16 @@
 
   <section class="home-news">
     <div class="news-title">
-      <h1>Пусть осень принесет свои плоды! Стартовал сентябрьский тур игры «Удача в придачу!»</h1>
+      <h1>{{ news.title }}</h1>
     </div>
     <div class="news-title">
-      <p>01 сентября 2023</p>
+      <p>{{ news.created }}</p>
     </div>
     <div class="news-img">
-      <a href="https://edostavka.by/news/167" target="_blank"><img src="{% static 'edostavka/images/e-news.png' %}" alt=""></a>
+      <a href="{% url 'back_info:news_5' %}" target="_blank"><img src="{% static news.img_path %}" alt=""></a>
     </div>
     <p>
-      1 сентября начинается новый, 183-й, тур народной игры «Удача в придачу!». Покупатели магазинов «Евроопт», «Хит!» и онлайн-гипермаркета «Едоставка» сами убедятся, что первый месяц осени может стать феноменально «урожайным», если будут верить в свою фортуну. В розыгрыше, как всегда, «призы мечты»!
+      {{ news.content }}
     </p>
 
   </section>

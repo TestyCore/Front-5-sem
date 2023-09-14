@@ -16,3 +16,11 @@ class Review(models.Model):
 
     def __str__(self):
         return self.content
+
+
+class News(models.Model):
+    title = models.CharField(max_length=200)
+    created = models.DateTimeField(auto_now_add=True)
+    content = models.CharField(max_length=1000)
+    img_path = models.CharField(max_length=200)
+

@@ -8,27 +8,28 @@
 
 <div class="news_x_page">
   <article class="news_x_content" itemscope itemtype="NewsArticle">
-    <h1 itemprop="headline">{% block news-title %}1+1 на Edostavka{% endblock %}</h1>
-    <span class="light_gray" itemprop="datePublished">{% block news-date %}28 августа 2023{% endblock %}</span>
+    <h1 itemprop="headline">{% block news-title %}{{ news.title }}{% endblock %}</h1>
+    <span class="light_gray" itemprop="datePublished">{% block news-date %}{{ news.created }}{% endblock %}</span>
     <div class="img">
-      {% block news-img %}<img src="{% static 'back_info/images/news-0.jpeg' %}?v=2" alt="">{% endblock %}
+      {% block news-img %}<img src="{% static news.img_path  %}?v=2" alt="">{% endblock %}
     </div>
     {% block news-text %}
     <section class="news_x_text" itemprop="text">
-      <br>
-      <p>C 28 по 30 августа «1+1» на Edostavka!</p>
-      <br>
-      <br>
-      <h4>КАК ЭТО РАБОТАЕТ НА EDOSTAVKA?</h4>
-      <br>
-      <p>1. В период проведения акции добавьте товар из подборки в корзину, указав необходимое число к заказу.
-Минимальное количество для участия в акции = 2шт.  Обязательно указывайте общее число товаров, которое будет в Вашем заказе.</p>
-      <br>
-      <p>2. Акция распространяется только на пару из 2 одинаковых товаров. </p>
-      <br>
-      <p>3. Итоговая сумма с учётом скидки будет отображена на странице оформления заказа. В корзине Вы увидите стоимость без учёта акции.</p>
-      <br>
-      <p>Важно! Скорректировать количество товаров можно в корзине.</p>
+    <p>{{ news.content }}</p>
+{#      <br>#}
+{#      <p>C 28 по 30 августа «1+1» на Edostavka!</p>#}
+{#      <br>#}
+{#      <br>#}
+{#      <h4>КАК ЭТО РАБОТАЕТ НА EDOSTAVKA?</h4>#}
+{#      <br>#}
+{#      <p>1. В период проведения акции добавьте товар из подборки в корзину, указав необходимое число к заказу.#}
+{#Минимальное количество для участия в акции = 2шт.  Обязательно указывайте общее число товаров, которое будет в Вашем заказе.</p>#}
+{#      <br>#}
+{#      <p>2. Акция распространяется только на пару из 2 одинаковых товаров. </p>#}
+{#      <br>#}
+{#      <p>3. Итоговая сумма с учётом скидки будет отображена на странице оформления заказа. В корзине Вы увидите стоимость без учёта акции.</p>#}
+{#      <br>#}
+{#      <p>Важно! Скорректировать количество товаров можно в корзине.</p>#}
     </section>
     {% endblock %}
     <div class="news-selection">

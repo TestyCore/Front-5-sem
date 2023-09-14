@@ -62,3 +62,391 @@ DEBUG 2023-09-14 02:59:31,310 Starting new HTTPS connection (1): api.kanye.rest:
 DEBUG 2023-09-14 02:59:31,460 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
 DEBUG 2023-09-14 02:59:31,747 Starting new HTTPS connection (1): api.kanye.rest:443
 DEBUG 2023-09-14 02:59:31,923 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 03:00:46,516 Watching for file changes with StatReloader
+DEBUG 2023-09-14 03:00:46,632 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 03:00:46,635 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 03:00:46,635 interactive is False
+DEBUG 2023-09-14 03:00:46,635 platform is darwin
+DEBUG 2023-09-14 03:00:46,668 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 03:00:46,669 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 03:01:16,398 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 03:01:16,582 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 38
+DEBUG 2023-09-14 03:01:25,052 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 03:01:25,223 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 03:01:26,021 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 03:01:26,232 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 33
+DEBUG 2023-09-14 03:02:05,551 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 03:02:05,704 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 03:02:19,955 Starting new HTTPS connection (1): api.yookassa.ru:443
+DEBUG 2023-09-14 03:02:20,203 https://api.yookassa.ru:443 "POST /v3/payments HTTP/1.1" 200 518
+INFO 2023-09-14 03:02:20,209 Purchase completed!
+DEBUG 2023-09-14 03:09:26,421 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 03:09:26,599 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 43
+DEBUG 2023-09-14 03:10:27,533 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 03:10:27,694 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 38
+DEBUG 2023-09-14 03:10:34,825 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 03:10:34,995 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 03:10:36,658 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 03:10:36,834 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 11:23:39,986 Watching for file changes with StatReloader
+DEBUG 2023-09-14 11:23:40,290 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 11:23:40,293 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 11:23:40,294 interactive is False
+DEBUG 2023-09-14 11:23:40,294 platform is darwin
+DEBUG 2023-09-14 11:23:40,322 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 11:23:40,324 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 11:23:41,748 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 11:23:41,918 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 16
+INFO 2023-09-14 11:34:48,955 Watching for file changes with StatReloader
+DEBUG 2023-09-14 11:34:49,093 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 11:34:49,096 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 11:34:49,096 interactive is False
+DEBUG 2023-09-14 11:34:49,097 platform is darwin
+DEBUG 2023-09-14 11:34:49,152 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 11:34:49,153 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 11:34:50,254 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 11:34:50,476 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 40
+DEBUG 2023-09-14 11:34:52,926 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 11:34:53,164 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 39
+DEBUG 2023-09-14 11:35:15,439 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 11:35:15,724 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 11:35:41,816 Watching for file changes with StatReloader
+DEBUG 2023-09-14 11:35:41,937 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 11:35:41,939 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 11:35:41,940 interactive is False
+DEBUG 2023-09-14 11:35:41,940 platform is darwin
+DEBUG 2023-09-14 11:35:41,968 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 11:35:41,969 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 11:35:42,966 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 11:35:43,156 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 12:32:48,405 Watching for file changes with StatReloader
+DEBUG 2023-09-14 12:32:48,592 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 12:32:48,595 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:32:48,595 interactive is False
+DEBUG 2023-09-14 12:32:48,596 platform is darwin
+DEBUG 2023-09-14 12:32:48,624 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:32:48,625 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 12:32:51,060 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 12:32:51,563 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 30
+DEBUG 2023-09-14 12:32:52,959 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 12:32:53,475 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 12:32:54,377 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 12:32:54,832 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 12:33:13,232 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 12:33:13,844 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 12:41:00,585 Watching for file changes with StatReloader
+DEBUG 2023-09-14 12:41:00,713 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 12:41:00,715 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:41:00,716 interactive is False
+DEBUG 2023-09-14 12:41:00,716 platform is darwin
+DEBUG 2023-09-14 12:41:00,744 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:41:00,745 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 12:41:02,195 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 12:41:02,593 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 12:41:23,401 Watching for file changes with StatReloader
+DEBUG 2023-09-14 12:41:23,516 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 12:41:23,520 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:41:23,520 interactive is False
+DEBUG 2023-09-14 12:41:23,520 platform is darwin
+DEBUG 2023-09-14 12:41:23,546 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:41:23,547 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 12:41:25,060 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 12:41:25,786 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 12:52:51,811 Watching for file changes with StatReloader
+DEBUG 2023-09-14 12:52:51,929 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 12:52:51,931 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:52:51,932 interactive is False
+DEBUG 2023-09-14 12:52:51,932 platform is darwin
+DEBUG 2023-09-14 12:52:51,965 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:52:51,966 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 12:52:55,431 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 12:52:55,962 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 33
+WARNING 2023-09-14 12:55:08,453 Not Found: /favicon.ico
+INFO 2023-09-14 12:56:31,902 Watching for file changes with StatReloader
+DEBUG 2023-09-14 12:56:32,023 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 12:56:32,026 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:56:32,026 interactive is False
+DEBUG 2023-09-14 12:56:32,026 platform is darwin
+DEBUG 2023-09-14 12:56:32,055 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 12:56:32,056 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 12:56:33,373 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 12:56:33,823 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 45
+DEBUG 2023-09-14 12:56:41,141 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 12:56:41,642 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 12:59:59,813 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/back_info/models.py changed, reloading.
+INFO 2023-09-14 13:00:00,078 Watching for file changes with StatReloader
+INFO 2023-09-14 13:00:10,953 Watching for file changes with StatReloader
+INFO 2023-09-14 13:00:20,508 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:00:20,626 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:00:20,628 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:00:20,629 interactive is False
+DEBUG 2023-09-14 13:00:20,629 platform is darwin
+DEBUG 2023-09-14 13:00:20,663 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:00:20,664 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+INFO 2023-09-14 13:00:26,157 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/back_info/models.py changed, reloading.
+INFO 2023-09-14 13:00:26,391 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:00:26,505 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:00:26,508 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:00:26,508 interactive is False
+DEBUG 2023-09-14 13:00:26,508 platform is darwin
+DEBUG 2023-09-14 13:00:26,551 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:00:26,552 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+INFO 2023-09-14 13:00:28,067 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:00:28,187 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:00:28,189 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:00:28,190 interactive is False
+DEBUG 2023-09-14 13:00:28,190 platform is darwin
+DEBUG 2023-09-14 13:00:28,219 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:00:28,220 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 13:00:29,295 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:00:29,897 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:01:49,950 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:01:49,952 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:01:49,953 interactive is False
+DEBUG 2023-09-14 13:01:49,953 platform is darwin
+DEBUG 2023-09-14 13:01:49,986 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:01:49,987 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 13:02:16,128 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:02:16,130 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:02:16,131 interactive is False
+DEBUG 2023-09-14 13:02:16,131 platform is darwin
+DEBUG 2023-09-14 13:02:16,163 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:02:16,164 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+INFO 2023-09-14 13:10:33,748 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:10:33,940 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:10:33,944 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:10:33,944 interactive is False
+DEBUG 2023-09-14 13:10:33,944 platform is darwin
+DEBUG 2023-09-14 13:10:33,977 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:10:33,979 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 13:10:35,296 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:10:35,957 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 33
+ERROR 2023-09-14 13:10:39,346 Internal Server Error: /back_info/news/news_0/
+Traceback (most recent call last):
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/back_info/views.py", line 94, in news_0
+    return render(request, 'back_info/news_0.html', "news: news")
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 57, in render
+    context = make_context(
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/template/context.py", line 278, in make_context
+    raise TypeError(
+TypeError: context must be a dict rather than str.
+ERROR 2023-09-14 13:11:21,737 Internal Server Error: /back_info/news/news_0/
+Traceback (most recent call last):
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/back_info/views.py", line 94, in news_0
+    return render(request, 'back_info/news_0.html', {'news': news})
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/template/backends/django.py", line 57, in render
+    context = make_context(
+  File "/Users/brr/Library/Python/3.9/lib/python/site-packages/django/template/context.py", line 278, in make_context
+    raise TypeError(
+TypeError: context must be a dict rather than str.
+INFO 2023-09-14 13:11:22,134 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/back_info/views.py changed, reloading.
+INFO 2023-09-14 13:11:22,395 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:11:22,534 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:11:22,536 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:11:22,537 interactive is False
+DEBUG 2023-09-14 13:11:22,537 platform is darwin
+DEBUG 2023-09-14 13:11:22,574 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:11:22,575 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+INFO 2023-09-14 13:13:02,592 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/back_info/views.py changed, reloading.
+INFO 2023-09-14 13:13:02,847 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:13:02,964 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:13:02,966 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:13:02,967 interactive is False
+DEBUG 2023-09-14 13:13:02,967 platform is darwin
+DEBUG 2023-09-14 13:13:02,997 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:13:03,000 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+INFO 2023-09-14 13:21:08,555 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/back_info/views.py changed, reloading.
+INFO 2023-09-14 13:21:08,791 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:21:08,909 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:21:08,912 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:21:08,912 interactive is False
+DEBUG 2023-09-14 13:21:08,913 platform is darwin
+DEBUG 2023-09-14 13:21:08,945 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:21:08,946 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+INFO 2023-09-14 13:21:10,299 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:21:10,414 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:21:10,416 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:21:10,417 interactive is False
+DEBUG 2023-09-14 13:21:10,417 platform is darwin
+DEBUG 2023-09-14 13:21:10,450 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:21:10,451 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 13:21:11,596 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:21:12,209 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:21:25,530 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:21:26,188 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 13:23:18,599 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/edostavka/views.py changed, reloading.
+INFO 2023-09-14 13:23:18,855 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:23:18,995 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:23:18,997 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:23:18,998 interactive is False
+DEBUG 2023-09-14 13:23:18,998 platform is darwin
+DEBUG 2023-09-14 13:23:19,033 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:23:19,037 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+INFO 2023-09-14 13:23:31,739 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/edostavka/views.py changed, reloading.
+INFO 2023-09-14 13:23:32,122 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:23:32,227 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:23:32,230 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:23:32,230 interactive is False
+DEBUG 2023-09-14 13:23:32,230 platform is darwin
+DEBUG 2023-09-14 13:23:32,256 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:23:32,257 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+INFO 2023-09-14 13:29:15,587 /Users/brr/Projects/Web-5-sem/Front-5-sem/Lab_4/edostavka/views.py changed, reloading.
+INFO 2023-09-14 13:29:15,823 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:29:15,926 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:29:15,928 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:29:15,929 interactive is False
+DEBUG 2023-09-14 13:29:15,929 platform is darwin
+DEBUG 2023-09-14 13:29:15,967 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:29:15,968 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+INFO 2023-09-14 13:29:25,753 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:29:25,865 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:29:25,869 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:29:25,870 interactive is False
+DEBUG 2023-09-14 13:29:25,870 platform is darwin
+DEBUG 2023-09-14 13:29:25,896 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:29:25,897 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 13:29:27,445 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:29:27,787 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 13:29:55,309 Watching for file changes with StatReloader
+DEBUG 2023-09-14 13:29:55,427 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 13:29:55,429 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:29:55,430 interactive is False
+DEBUG 2023-09-14 13:29:55,430 platform is darwin
+DEBUG 2023-09-14 13:29:55,463 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 13:29:55,464 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 13:29:57,780 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:29:58,082 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:31:15,866 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:31:16,526 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:32:23,137 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:32:24,598 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:32:26,444 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:32:26,828 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:32:50,796 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:32:51,189 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:32:57,766 Starting new HTTPS connection (1): api.yookassa.ru:443
+DEBUG 2023-09-14 13:32:58,324 https://api.yookassa.ru:443 "POST /v3/payments HTTP/1.1" 200 518
+INFO 2023-09-14 13:32:58,328 Purchase completed!
+DEBUG 2023-09-14 13:33:39,667 Starting new HTTPS connection (1): api.yookassa.ru:443
+DEBUG 2023-09-14 13:33:40,236 https://api.yookassa.ru:443 "POST /v3/payments HTTP/1.1" 200 518
+INFO 2023-09-14 13:33:40,241 Purchase completed!
+DEBUG 2023-09-14 13:36:06,131 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:36:06,586 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 41
+DEBUG 2023-09-14 13:46:55,655 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:46:56,080 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:51:37,306 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:51:38,333 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:51:51,363 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:51:53,740 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:52:23,462 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:52:26,546 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 39
+DEBUG 2023-09-14 13:52:28,578 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:52:29,695 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:52:46,073 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:52:46,551 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:52:52,307 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:52:52,815 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 41
+DEBUG 2023-09-14 13:54:24,066 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:54:24,603 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 13:54:42,418 New rate was created
+DEBUG 2023-09-14 13:54:52,543 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:54:52,931 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:55:10,053 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:55:10,819 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 13:55:40,548 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:55:41,134 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 47
+DEBUG 2023-09-14 13:57:36,535 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 13:57:36,862 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 33
+DEBUG 2023-09-14 14:00:09,549 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:00:10,024 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 16
+DEBUG 2023-09-14 14:13:27,549 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:13:28,656 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:13:30,115 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:13:30,802 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:17:37,957 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:17:38,536 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:26:47,955 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:26:48,399 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:27:03,596 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:27:04,333 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:27:12,988 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:27:13,693 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:38:04,391 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:38:05,021 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 42
+DEBUG 2023-09-14 14:38:07,911 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:38:09,048 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 35
+DEBUG 2023-09-14 14:38:12,938 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:38:13,836 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:39:07,374 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:39:09,070 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:39:10,387 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:39:11,030 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:39:28,271 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:39:28,982 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:40:12,823 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:40:13,691 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 29
+DEBUG 2023-09-14 14:41:04,042 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:41:04,818 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 44
+DEBUG 2023-09-14 14:42:01,615 Starting new HTTPS connection (1): api.yookassa.ru:443
+DEBUG 2023-09-14 14:42:02,498 https://api.yookassa.ru:443 "POST /v3/payments HTTP/1.1" 200 518
+INFO 2023-09-14 14:42:02,503 Purchase completed!
+DEBUG 2023-09-14 14:42:29,456 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:42:29,992 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 14:43:08,403 New rate was created
+DEBUG 2023-09-14 14:44:31,082 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:44:32,530 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 14:46:03,225 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 14:46:03,726 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+INFO 2023-09-14 17:14:46,468 Watching for file changes with StatReloader
+DEBUG 2023-09-14 17:14:46,629 matplotlib data path: /Users/brr/Library/Python/3.9/lib/python/site-packages/matplotlib/mpl-data
+DEBUG 2023-09-14 17:14:46,634 CONFIGDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 17:14:46,635 interactive is False
+DEBUG 2023-09-14 17:14:46,635 platform is darwin
+DEBUG 2023-09-14 17:14:46,675 CACHEDIR=/Users/brr/.matplotlib
+DEBUG 2023-09-14 17:14:46,676 Using fontManager instance from /Users/brr/.matplotlib/fontlist-v330.json
+DEBUG 2023-09-14 17:14:47,656 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 17:15:37,865 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 17:17:08,173 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 17:17:42,981 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 17:23:32,402 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 17:23:50,930 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:25:41,667 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:25:41,879 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 23:33:03,934 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:33:04,115 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 23:33:26,337 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:33:26,566 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 23:40:00,804 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:40:01,024 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 31
+DEBUG 2023-09-14 23:40:02,182 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:40:02,374 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 39
+DEBUG 2023-09-14 23:40:31,699 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:40:31,882 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 43
+DEBUG 2023-09-14 23:40:37,681 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:40:37,903 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 23:40:45,730 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:40:45,903 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 23:41:05,662 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:41:05,843 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 23:41:11,234 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:41:11,422 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 29
+DEBUG 2023-09-14 23:41:16,571 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:41:16,737 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 None
+DEBUG 2023-09-14 23:41:24,114 Starting new HTTPS connection (1): api.kanye.rest:443
+DEBUG 2023-09-14 23:41:24,343 https://api.kanye.rest:443 "GET / HTTP/1.1" 200 37

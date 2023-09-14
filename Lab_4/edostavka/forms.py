@@ -11,7 +11,7 @@ from django.forms.widgets import TextInput
 
 
 class PhoneInput(TextInput):
-    template_name = 'custom_widgets/phone_input.html'  # Create a custom template for the widget
+    template_name = 'custom_widgets/phone_input.html'
 
 
 class ExtendedUserCreationForm(UserCreationForm):

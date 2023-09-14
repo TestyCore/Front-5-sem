@@ -7,6 +7,7 @@ from pygments import console
 
 from .forms import ExtendedUserCreationForm
 from .models import Product, Manufacturer
+from back_info.models import News
 from django.views import generic
 
 from django.contrib.auth import login
@@ -78,11 +79,15 @@ def index(request):
     except:
         quote = ""
 
+    news = News.objects.order_by('created').first()
+
     context = {
         'num_products': num_products,
         'num_manufacturers': num_manufacturers,
         'quote': quote,
+        'news': news
     }
+
 
     return render(request, 'index.html', context=context)
 
