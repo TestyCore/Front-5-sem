@@ -1,6 +1,9 @@
 # from /Users/brr/Library/Python/3.9/lib/python/site-packages/requests
+import os
 
+import matplotlib
 from django.db.models import Sum, Avg, Count
+from django.db.models.functions import TruncDate
 from django.shortcuts import render, redirect
 from django.views import generic
 from statistics import mode, median
@@ -9,6 +12,9 @@ import json
 import base64
 import uuid
 
+from matplotlib import pyplot as plt
+
+from Lab_4 import settings
 from .models import OrderItem, Order
 from cart.cart import Cart
 from django.core.exceptions import PermissionDenied
@@ -78,6 +84,27 @@ def order_create(request):
 
 class OrderListView(generic.ListView):
     model = Order
+
+    result = Order.objects.annotate(day=TruncDate('created')).values('day').annotate(
+        order_count=Count('id')).order_by(
+        'day')
+
+    dates = [item['day'] for item in result]
+    order_counts = [item['order_count'] for item in result]
+
+    matplotlib.pyplot.switch_backend('Agg')
+
+    save_dir = os.path.join(settings.BASE_DIR, 'client_list', 'static', 'client_list', 'images')
+    save_path = os.path.join(save_dir, 'order_count_graph.png')
+
+    plt.plot(dates, order_counts)
+    plt.xlabel('Date')
+    plt.ylabel('Orders')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig(save_path)
+    plt.close()
+
     queryset = Order.objects.order_by('client')
 
     def get_context_data(self, **kwargs):

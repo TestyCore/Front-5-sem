@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Order list{% endblock %}
 {% block content %}
 
@@ -15,7 +16,11 @@
           <br>
           <br>
           <li>
-            Order: {{ order.id }} - Client: {{ order.client }}
+            <strong>Client: {{ order.client }}</strong>
+            <br>
+            <small>{{ order.created }}</small>
+            <br>
+            <br>
             <ul>
               {% for item in order.items.all %}
                 <li>
@@ -43,6 +48,10 @@
       <p style="font-weight: bold">Average: {{ average_cost }}$</p>
       <p style="font-weight: bold">Mode: {{ mode_cost }}$</p>
       <p style="font-weight: bold">Most Common: {{ most_common_item_name }}$</p>
+    </section>
+    <section class="graph">
+      <br>
+      <img src="{% static 'client_list/images/order_count_graph.png' %}" alt="">
     </section>
     {% else %}
       <p>There are no orders.</p>

@@ -69,15 +69,14 @@
             {% endfor %}
 
           {% endif %}
-          {% endif  %}
-
         </section>
       </details>
       <a href="{% url 'back_info:reviews' %}" class="rate-link">Rate us</a>
-
+     {% endif  %}
     </section>
 
     <section class="orders">
+    {% if is_customer %}
       <details>
         <summary>My orders</summary>
          <ul>
@@ -94,6 +93,7 @@
           {% endfor %}
         </ul>
       </details>
+    {% endif %}
     </section>
   </div>
 

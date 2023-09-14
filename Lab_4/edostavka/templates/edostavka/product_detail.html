@@ -36,6 +36,10 @@
                 </form>
               {% endif %}
             {% endfor %}
+          {% else %}
+            <br>
+            <br>
+             <a href="{% url 'login' %}">Sign in to make purchases</a>
           {% endif %}
         </div>
 
