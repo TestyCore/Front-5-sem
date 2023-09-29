@@ -1,0 +1,36 @@
+{% extends "back_info/news_0.html" %}
+{% block title %}Приятный подарок от Edostavka{% endblock %}
+{% load static %}
+
+  {% block news-title %}{{ news.title }}{% endblock %}
+  {% block news-date %}{{ news.created }}{% endblock %}
+  {% block news-img %}<img src="{% static news.img_path %}?v=2" alt="">{% endblock %}
+  {% block news-text %}
+    <section class="news_x_text">
+    <p>{{ news.content }}</p>
+{#      <br>#}
+{#      <p>Только 8 августа покупайте любую пшеничную муку из каталога и получайте дрожжи пресованные в подарок! </p>#}
+{#      <br>#}
+{#      <br>#}
+{#      <p>Подарок автоматически будет добавлен в Вашу корзину. Вам останется лишь подтвердить заказ.</p>#}
+{#      <br>#}
+{#      <p>Акция действует при наличии товара на складе. Подарок возврату, обмену на денежные средства или на другой товар не подлежит.</p>#}
+{#      <p>Приятных и выгодных покупок! Ваша Eдоставка.</p>#}
+    </section>
+  {% endblock %}
+
+  {% block news-4 %}
+    <a class="news-card-link" href="{% url 'back_info:news_0' %}">
+      <div class="news-card">
+        <div class="card-img">
+          <img src="{% static 'back_info/images/news-0.jpeg' %}?v=2" alt="">
+        </div>
+        <div class="card-descr">
+          <span class="light_gray">28 августа 2023</span>
+          <br>
+          <br>
+          <h4>1+1 на Edostavka</h4>
+        </div>
+      </div>
+    </a>
+  {% endblock %}

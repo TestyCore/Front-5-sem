@@ -1,16 +1,68 @@
 {% extends "base.html" %}
-
+{% load static %}
+{% block title %} Home {% endblock %}
 {% block content %}
-  <h1>eDostavka Home</h1>
-  <p>
-    Welcome to eDostavka, a website developed by
-    <em>Mozilla Developer Network</em>!
-  </p>
-  <h2>Dynamic content</h2>
-  <p>The site has the following record counts:</p>
-  <ul>
-    <li><strong>Products:</strong> {{ num_products }}</li>
-    <li><strong>Manufacturers:</strong> {{ num_manufacturers }}</li>
-    <li><strong>Quote:</strong> {{ quote }}</li>
-  </ul>
+
+<link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/home.css'%}?v=2"/>
+
+<div class="home-page">
+
+  <section class="home-partners">
+    <div class="partners-logo">
+      <a href="https://evroopt.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/logo.svg" alt=""></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://groshyk.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/grishik.svg" alt=""></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://emall.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/logo_emall.svg" alt=""></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://evropochta.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/pochta_logo2.svg" alt=""></a>
+    </div>
+    <div class="partners-logo">
+      <a href="https://hitdiscount.by/" target="_blank"><img src="https://evroopt.by/wp-content/themes/evroopt/svg/hit-logo21-red2.svg" alt=""></a>
+    </div>
+  </section>
+
+  <section class="home-news">
+    <div class="news-title">
+      <h1>{{ news.title }}</h1>
+    </div>
+    <div class="news-title">
+      <p>{{ news.created }}</p>
+    </div>
+    <div class="news-img">
+      <a href="{% url 'back_info:news_5' %}" target="_blank"><img src="{% static news.img_path %}" alt=""></a>
+    </div>
+    <p>
+      {{ news.content }}
+    </p>
+
+  </section>
+
+  <section class="home-banner">
+
+      <div class="banner-1">
+          <a href="https://evroopt.by/redprice/vse-tovary/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-1.jpeg' %}" alt="Ad Banner"></a>
+      </div>
+
+      <div class="banner-2">
+          <a href="https://evroopt.by/gril-fest/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-2.jpeg' %}" alt="Ad Banner"></a>
+      </div>
+
+      <div class="banner-3">
+          <a href="https://evroopt.by/jobs/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-3.jpeg' %}" alt="Ad Banner"></a>
+      </div>
+
+      <div class="banner-4">
+          <a href="https://evroopt.by/deals/worldexpert/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-4.jpeg' %}" alt="Ad Banner"></a>
+      </div>
+
+      <div class="banner-5">
+          <a href="https://evroopt.by/ryba/" target="_blank"><img src="{% static 'edostavka/images/euroopt-banner-5.gif' %}" alt="Ad Banner"></a>
+      </div>
+    </section>
+
+</div>
 {% endblock %}

@@ -1,40 +1,65 @@
 {% extends "base.html" %}
+
+{% load static %}
+
+
 {% block title %}
     Your shopping cart
 {% endblock %}
+
 {% block content %}
-    <h1>Your shopping cart</h1>
-    <table class="cart">
-        <thead>
-        <tr>
-            <th>Product</th>
-            <th>Remove</th>
-            <th>Unit price</th>
-            <th>Price</th>
-        </tr>
-        </thead>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'cart/css/detail.css' %}?v=5"/>
+
+  <div class="cart-page">
+
+    <section class="header">
+      <h1>Your shopping cart</h1>
+    </section>
+
+    <section class="cart-items">
+      <table class="cart-table">
+      <colgroup>
+        <col>
+        <col>
+      </colgroup>
         <tbody>
-        {% for item in cart %}
-            {% with product=item.product %}
-                <tr>
-                    <td><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></td>
-                    <td>{{ item.quantity }}</td>
-                    <td><a href="{% url 'cart:cart_remove' product.id %}">Remove</a></td>
-                    <td class="num">{{ item.price }}</td>
-                    <td class="num">{{ item.total_price }}</td>
-                </tr>
-            {% endwith %}
-        {% endfor %}
-        <tr class="total">
-            <td>Total</td>
-            <td colspan="4"></td>
-            <td class="num">{{ cart.get_total_price }}</td>
-        </tr>
+          {% for item in cart %}
+              {% with product=item.product %}
+                  <tr>
+                    <td>
+                      <div class="item-img">
+                        {% with image=product.img_url %}
+                        <img src="{% static image %}" alt="">
+                        {% endwith %}
+                      </div>
+                    </td>
+                    <td>
+                      <div class="item-info">
+                        <a href="{{ product.get_absolute_url }}"><strong>Product: </strong>{{ product.title }}</a>
+                        <br>
+                        <p><strong>Price (unit): </strong>{{ item.price }}$</p>
+                        <p><strong>Quantity: </strong>{{ item.quantity }}</p>
+                        <a href="{% url 'cart:cart_remove' product.id %}" class="rem-link">Remove</a>
+                      </div>
+                    </td>
+                  </tr>
+              {% endwith %}
+          {% endfor %}
         </tbody>
-    </table>
-    <p class="text-right">
-        <a href="{% url 'order:order_create' %}" class="button">
-            Checkout
-        </a>
-    </p>
+      </table>
+      <h2 class="total-price">Total: {{ cart.get_total_price }} $</h2>
+    </section>
+
+    <form action="{% url 'order:order_create' %}" method="POST" class="order-form">
+      {{ form.as_p }}
+      <p><input type="submit" value="Checkout" class="pay-link"></p>
+      {% csrf_token %}
+    </form>
+
+  </div>
+
+
+
+
 {% endblock %}

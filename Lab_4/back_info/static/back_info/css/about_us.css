@@ -1,0 +1,69 @@
+.about-us-page {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.about-us-page .header {
+    grid-column: 1/9;
+}
+
+.about-us-page .header {
+    font-size: 2em;
+}
+
+.about-us-page .info {
+    grid-column: 1/9;
+}
+
+.about-us-page .info figure>img {
+    margin: 1em 0;
+    width: 100%;
+}
+
+.info .video {
+    margin-top: 2em;
+}
+
+.info .video video {
+    width: 100%;
+}
+
+.about-us-page .contacts-wrapper{
+    grid-column: 10/13;
+    display: inline;
+}
+
+.about-us-page .contacts {
+    font-size: 0.9em;
+    margin: 1em 0 3em;
+    border-left: 1px solid rgb(56, 54, 54);
+    padding-left: 0.5em;
+}
+
+.about-us-page .contacts-wrapper h3 {
+    margin: 0.6em 0;
+}
+
+.contacts-wrapper .certificates {
+    grid-column: 10/13;
+}
+
+.contacts-wrapper .certificates .custom-cert{
+    background-color: wheat;
+}
+
+.contacts-wrapper .certificates img{
+    width: 100%;
+}
+
+.about-us-page .history {
+    grid-column: 1/10;
+}
+
+.about-us-page .history>h2 {
+    margin: 2em 0 0.5em 0;
+}
+
+.history .year {
+    font-weight: bold;
+}

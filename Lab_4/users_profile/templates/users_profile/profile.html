@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+{% load tz %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+  <link rel="stylesheet" href="{% static 'users_profile/css/profile.css' %}?v=4"/>
+
+  <div class="profile-page">
+
+    <div class="info-wrapper">
+      <section class="info">
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>First name:</strong> {{ user.first_name }}</p>
+        <p><strong>Last name:</strong> {{ user.last_name }}</p>
+        <time>{{ current_datetime }}</time>
+        <time>{{ current_timezone }}</time>
+      </section>
+
+      <section class="edit-info">
+        <details>
+        <summary>Edit your data</summary>
+          <form action="" method="post">
+            {% csrf_token %}
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" value="{{ user.email }}" required><br>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" required><br>
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" pattern="[A-Za-z]+" required><br>
+            <label for="last_name">Last Name:</label>
+            <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" pattern="[A-Za-z]+" required><br>
+            <button type="submit">Save Changes</button>
+          </form>
+        </details>
+      </section>
+    </div>
+
+
+
+    <section class="reviews">
+      {% if is_customer %}
+
+      <details>
+        <summary>My reviews</summary>
+        <section class="reviews-list">
+          {% if reviews.count == 0 %}
+              <p>No Reviews</p>
+          {% else %}
+
+            {% for review in reviews %}
+              <div class="review-record">
+
+              {% with stars=review.rating  %}
+                {% with ''|center:stars as range %}
+                  {% for star in range %}
+                    <i class="fa fa-star checked"></i>
+                  {% endfor %}
+                {% endwith %}
+              {% endwith %}
+                <br>
+                <sup>{{ review.created|date:"d-m-Y H:i:s" }} ({{ review.created|timezone:"UTC"|date:"d-m-Y H:i:s e" }})</sup>
+                <br>
+                <p>{{ review.content }}</p>
+                <br>
+              </div>
+
+            {% endfor %}
+
+          {% endif %}
+        </section>
+      </details>
+      <a href="{% url 'back_info:reviews' %}" class="rate-link">Rate us</a>
+     {% endif  %}
+    </section>
+
+    <section class="orders">
+    {% if is_customer %}
+      <details>
+        <summary>My orders</summary>
+         <ul>
+          {% for item in orders %}
+            <li>
+            <strong>{{ item.date|date:"d-m-Y H:i:s" }} ({{ item.date|timezone:"UTC"|date:"d-m-Y H:i:s e" }})</strong><br>
+                <ul>
+                  {% for item in item.order_items %}
+                    <li>{{ item.0 }}</li>
+                  {% endfor %}
+                </ul>
+              </li>
+            <br>
+          {% endfor %}
+        </ul>
+      </details>
+    {% endif %}
+    </section>
+  </div>
+
+{% endblock %}

@@ -1,6 +1,9 @@
 # from /Users/brr/Library/Python/3.9/lib/python/site-packages/requests
+import os
 
+import matplotlib
 from django.db.models import Sum, Avg, Count
+from django.db.models.functions import TruncDate
 from django.shortcuts import render, redirect
 from django.views import generic
 from statistics import mode, median
@@ -9,9 +12,16 @@ import json
 import base64
 import uuid
 
+from matplotlib import pyplot as plt
+
+from Lab_4 import settings
 from .models import OrderItem, Order
 from cart.cart import Cart
 from django.core.exceptions import PermissionDenied
+
+
+import logging
+logger = logging.getLogger(__name__)
 
 
 def order_create(request):
@@ -22,23 +32,19 @@ def order_create(request):
     if cart.get_total_price() == 0:
         return redirect('http://127.0.0.1:8000/edostavka/products/')
     if request.method == 'POST':
-        order = Order.objects.create(client=request.user.username)
+        order = Order.objects.create(client=request.user)
 
         for item in cart:
             OrderItem.objects.create(order=order,
                                      product=item['product'],
                                      price=item['price'],
                                      quantity=item['quantity'])
-            # item['product'].price += item['quantity']
             item['product'].save()
 
-        # cart.clear()
+        url = "https://api.yookassa.ru/v3/payments"
 
-        #
-        url = "https://api.yookassa.ru/v3/payments"  # Replace with the YooKassa API endpoint
-
-        shop_id = "318870"  # Replace with your actual shopId
-        secret_key = "test_e6oCux8C5T90AegU9ba_zWHoW0BDVkiQowMv9xV4Ha0"  # Replace with your actual secret API key
+        shop_id = "318870"
+        secret_key = "test_e6oCux8C5T90AegU9ba_zWHoW0BDVkiQowMv9xV4Ha0"
 
         headers = {
             "Authorization": "Basic " + base64.b64encode(f"{shop_id}:{secret_key}".encode("utf-8")).decode("utf-8"),
@@ -55,12 +61,14 @@ def order_create(request):
             "confirmation": {
                 "type": "redirect",
                 "return_url": "http://127.0.0.1:8000/edostavka/products/",
-                "confirm_url": "https://localhost:7185/Cart/Index"  # Add the cancel URL here
+                "confirm_url": "https://localhost:7185/Cart/Index"
             }
         }
 
         response = requests.post(url, headers=headers, data=json.dumps(payload))
         response_data = response.json()
+
+        logger.info('Purchase completed!')
 
         cart.clear()
 
@@ -68,50 +76,58 @@ def order_create(request):
             redirect_url = response_data["confirmation"]["confirmation_url"]
             return redirect(redirect_url)
         else:
-            # Handle the error response
-            # You can access the error details from the response_data
-            # and take appropriate action
+            logger.error('Purchase Failed')
             raise Exception("Failed to initiate payment. Error: " + response.text)
-        #
-        #
-        #
-        # return render(request, 'order/created.html',
-        #                {'order': order})
 
     return render(request, 'order/create.html', {'cart': cart})
 
 
 class OrderListView(generic.ListView):
     model = Order
+
+    result = Order.objects.annotate(day=TruncDate('created')).values('day').annotate(
+        order_count=Count('id')).order_by(
+        'day')
+
+    dates = [item['day'] for item in result]
+    order_counts = [item['order_count'] for item in result]
+
+    matplotlib.pyplot.switch_backend('Agg')
+
+    save_dir = os.path.join(settings.BASE_DIR, 'client_list', 'static', 'client_list', 'images')
+    save_path = os.path.join(save_dir, 'order_count_graph.png')
+
+    plt.plot(dates, order_counts)
+    plt.xlabel('Date')
+    plt.ylabel('Orders')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig(save_path)
+    plt.close()
+
     queryset = Order.objects.order_by('client')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        orders = Order.objects.all()
+        total_cost = 0
+        for order in orders:
+            total_cost = total_cost + order.get_total_cost()
 
+        print(total_cost)
+        order_count = Order.objects.count()
+        print(order_count)
+        average_cost = total_cost / order_count if order_count > 0 else 0
+        order_prices = Order.objects.values_list('items__price', flat=True)
+        mode_cost = mode(order_prices) if order_prices else 0
 
+        most_common_item = Order.objects.values('items__product__title').annotate(
+            count=Count('items__product__title')).order_by('-count').first()
+        most_common_item_name = most_common_item['items__product__title'] if most_common_item else ''
 
+        context['total_cost'] = "{:.2f}".format(total_cost or 0)
+        context['average_cost'] = "{:.2f}".format(average_cost or 0)
+        context['mode_cost'] = "{:.2f}".format(mode_cost or 0)
+        context['most_common_item_name'] = most_common_item_name
 
-
-
-
-
-
-
-
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     total_cost = Order.objects.aggregate(total=Sum('items__price')).get('total')
-    #     order_count = Order.objects.count()
-    #     average_cost = total_cost / order_count if order_count > 0 else 0
-    #     order_prices = Order.objects.values_list('items__price', flat=True)
-    #     mode_cost = mode(order_prices) if order_prices else 0
-    #
-    #     most_common_item = Order.objects.values('items__product__title').annotate(
-    #         count=Count('items__product__title')).order_by('-count').first()
-    #     most_common_item_name = most_common_item['items__product__title'] if most_common_item else ''
-    #
-    #     context['total_cost'] = "{:.2f}".format(total_cost or 0)
-    #     context['average_cost'] = "{:.2f}".format(average_cost or 0)
-    #     context['mode_cost'] = "{:.2f}".format(mode_cost or 0)
-    #     context['most_common_item_name'] = most_common_item_name
-    #
-    #     return context
+        return context

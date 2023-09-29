@@ -1,15 +1,11 @@
+from django.contrib.auth.models import User
 from django.db import models
 from edostavka.models import Product
 
 
 class Order(models.Model):
-    client = models.CharField(max_length=50, help_text='Enter name')
+    client = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
-    #
-    # class Meta:
-    #     ordering = ('-created',)
-    #     verbose_name = 'Order'
-    #     verbose_name_plural = 'Orders'
 
     def __str__(self):
         return 'Order {}'.format(self.id)

@@ -1,9 +1,13 @@
 from django.core.exceptions import PermissionDenied
 
 import requests
+from matplotlib import pyplot as plt
+from pandas.core import window
+from pygments import console
 
 from .forms import ExtendedUserCreationForm
 from .models import Product, Manufacturer
+from back_info.models import News
 from django.views import generic
 
 from django.contrib.auth import login
@@ -20,6 +24,10 @@ STAFF_ROLE = 'Staff'
 ADMIN_ROLE = 'Admin'
 
 
+import logging
+logger = logging.getLogger(__name__)
+
+
 def group_required(group_names):
     def decorator(view_func):
         @login_required
@@ -32,19 +40,11 @@ def group_required(group_names):
     return decorator
 
 
-# def group_required_class(group_names):
-#     def decorator(view_class):
-#         decorated_view = user_passes_test(lambda user: user.groups.filter(name__in=group_names).exists())(view_class)
-#         return method_decorator(login_required(login_url='login'))(decorated_view)
-#     return decorator
-
-
 def register(request):
     if request.method == 'POST':
         form = ExtendedUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            # Assign the appropriate role based on the form data
             user_role = form.cleaned_data['user_role']
             if user_role == 'staff':
                 group = Group.objects.get_or_create(name='Staff')[0]
@@ -56,6 +56,7 @@ def register(request):
                 group = Group.objects.get_or_create(name='Customer')[0]
                 user.groups.add(group)
             user.save()
+            logger.info('New user was registered!')
             login(request, user)
             return redirect('index')
     else:
@@ -63,17 +64,10 @@ def register(request):
     return render(request, 'registration/register.html', {'form': form})
 
 
-# @group_required(['Customer'])
 def index(request):
     products = Product.objects.all()
     num_products = products.count()
     num_manufacturers = Manufacturer.objects.all().count()
-
-    # context = {
-    #     'num_products': num_products,
-    #     'num_manufacturers': num_manufacturers,
-    # }
-
     try:
         response = requests.get('https://api.kanye.rest/')
         if response.status_code == 200:
@@ -85,21 +79,21 @@ def index(request):
     except:
         quote = ""
 
+    news = News.objects.order_by('created').first()
+
     context = {
         'num_products': num_products,
         'num_manufacturers': num_manufacturers,
         'quote': quote,
+        'news': news
     }
+
 
     return render(request, 'index.html', context=context)
 
 
-# @group_required_class(['Customer'])
 class ProductsListView(generic.ListView):
     model = Product
-    # paginate_by = 5
-
-    # template_name = 'product_list.html'  # Specify the template name
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -126,7 +120,6 @@ class ProductsListView(generic.ListView):
         return context
 
 
-# @group_required_class(['Customer'])
 class ProductDetailView(generic.DetailView):
     model = Product
 

@@ -6,6 +6,14 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
+from django.core.validators import RegexValidator
+from django.forms.widgets import TextInput
+
+
+class PhoneInput(TextInput):
+    template_name = 'custom_widgets/phone_input.html'
+
+
 class ExtendedUserCreationForm(UserCreationForm):
     USER_ROLE_CHOICES = [
         ('customer', 'Customer'),
@@ -28,7 +36,7 @@ class ExtendedUserCreationForm(UserCreationForm):
 
     email = forms.EmailField(label='Email')
     date_of_birth = forms.DateField(label='Birth date', widget=forms.DateInput(attrs={'type': 'date'}))
-    phone = forms.CharField(max_length=20, label='Phone')
+    phone = forms.CharField(max_length=20, label='Phone number', widget=forms.TextInput(attrs={'placeholder': '+375 (29) XXX-XX-XX'}))
     first_name = forms.CharField(max_length=100, label='First Name')
     second_name = forms.CharField(max_length=100, label='Second Name')
 
@@ -49,6 +57,6 @@ class ExtendedUserCreationForm(UserCreationForm):
     def clean_phone(self):
         phone = self.cleaned_data.get('phone')
         if phone:
-            if not re.match(r'^\+375\d{9}$', phone):
-                raise forms.ValidationError("Phone number must be in the format +375XXXXXXXXX.")
+            if not re.match(r'^\+\d{3} \(\d{2}\) \d{3}-\d{2}-\d{2}$', phone):
+                raise forms.ValidationError("Phone number must be in the format: '+375 (29) XXX-XX-XX'")
         return phone

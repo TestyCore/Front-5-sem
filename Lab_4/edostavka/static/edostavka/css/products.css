@@ -1,0 +1,37 @@
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.products-page .header {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+
+.card {
+  text-align: center;
+  margin: 0.5em;
+}
+.product-list .card img {
+  height: 10em;
+  width: 100%;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card .buy-button {
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card .buy-button:hover {
+  opacity: 0.7;
+}

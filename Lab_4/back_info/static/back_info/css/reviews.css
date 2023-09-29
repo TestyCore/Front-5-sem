@@ -1,0 +1,19 @@
+.reviews-page .header{
+    font-size: 2em;
+}
+
+.reviews-page .reviews-form {
+    margin: 3em 0;
+}
+
+.reviews-page .reviews-form .form-group{
+    margin: 0.5em 0;
+}
+
+.reviews-page i {
+    color: orange;
+}
+
+.reviews-page .reviews-list .review-record {
+    margin: 2.5em 0;
+}

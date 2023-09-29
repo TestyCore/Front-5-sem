@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block title %}Contacts{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/contacts.css' %}?v=2"/>
+
+
+<div class="contacts-page">
+  <h1>Наши сотрудники</h1>
+
+  <div class="staff-grid">
+     <div class="staff-card">
+        <div class="staff-photo">
+            <img src="{% static 'back_info/images/staff-1.png' %}" alt="Staff Member 1">
+        </div>
+        <h2>Маргарита Ферсенкова</h2>
+        <p>Email: margo@gmail.com</p>
+        <p>Должность: Главный менеджер</p>
+    </div>
+
+    <div class="staff-card">
+        <div class="staff-photo">
+            <img src="{% static 'back_info/images/staff-2.jpeg' %}" alt="Staff Member 1">
+        </div>
+        <h2>Василиса Мелова</h2>
+        <p>Email: vasya@gmail.com</p>
+        <p>Должность: Старший кассир</p>
+    </div>
+
+    <div class="staff-card">
+        <div class="staff-photo">
+            <img src="{% static 'back_info/images/staff-3.jpeg' %}" alt="Staff Member 1">
+        </div>
+        <h2>Антон Мирный</h2>
+        <p>Email: anton@gmail.com</p>
+        <p>Должность: Стажер кассир</p>
+    </div>
+
+    <div class="staff-card">
+        <div class="staff-photo">
+            <img src="{% static 'back_info/images/staff-4.jpeg' %}" alt="Staff Member 1">
+        </div>
+        <h2>Андрей Матюшевский</h2>
+        <p>Email: andrew@gmail.com</p>
+        <p>Должность: Генеральный директор</p>
+    </div>
+
+    <div class="staff-card">
+        <div class="staff-photo">
+            <img src="{% static 'back_info/images/staff-5.jpeg' %}" alt="Staff Member 1">
+        </div>
+        <h2>Нина Федорова</h2>
+        <p>Email: nina@gmail.com</p>
+        <p>Должность: Бухгалтер-экономист</p>
+    </div>
+
+    <div class="staff-card">
+        <div class="staff-photo">
+            <img src="{% static 'back_info/images/staff-6.jpeg' %}" alt="Staff Member 1">
+        </div>
+        <h2>Никита Васильев</h2>
+        <p>Email: nikita@gmail.com</p>
+        <p>Должность: Курьер-доставщик</p>
+    </div>
+
+    <div class="staff-card">
+        <div class="staff-photo">
+            <img src="{% static 'back_info/images/staff-7.jpeg' %}" alt="Staff Member 1">
+        </div>
+        <h2>Рома Китько</h2>
+        <p>Email: roma@gmail.com</p>
+        <p>Должность: Курьер-доставщик</p>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

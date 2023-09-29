@@ -1,26 +1,52 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Product details{% endblock %}
 
 {% block content %}
-  <h1>Title: {{ product.title }}</h1>
 
-  <p><strong>Manufacturer:</strong>{{ product.manufacturer}}</p>
-  <p><strong>Composition:</strong> {{ product.composition }}</p>
-  <p><strong>EAN:</strong> {{ product.ean }}</p>
-  <p><strong>ProductCategory:</strong> {{ product.category.all|join:", " }}</p>
-  <p><strong>Price:</strong> {{ product.price }}</p>
+  <link rel="stylesheet" type="text/css" href="{% static 'edostavka/css/product_detail.css'%}"/>
 
-    {%if user.is_authenticated%}
-        {% for group in user.groups.all %}
-            {% if group.name == 'Customer' %}
+  <div class="product-detail-page">
+    <section class="header">
+        <h1>{{ product.title }}</h1>
+    </section>
+
+    <div class="detail-wrapper">
+      <section class="image">
+        <div>
+          <img src="{% static product.img_url %}" alt="">
+        </div>
+      </section>
+
+      <section class="details">
+        <p><strong>Manufacturer:</strong>{{ product.manufacturer}}</p>
+        <p><strong>Composition:</strong> {{ product.composition }}</p>
+        <p><strong>EAN:</strong> {{ product.ean }}</p>
+        <p><strong>ProductCategory:</strong> {{ product.category.all|join:", " }}</p>
+        <p><strong>Price:</strong> {{ product.price }}</p>
+
+        <div class="auth_check">
+          {%if user.is_authenticated%}
+            {% for group in user.groups.all %}
+              {% if group.name == 'Customer' %}
                  <form action="{% url 'cart:cart_add' product.id %}" method="post">
                     {% csrf_token %}
-                    <input type="submit" value="Add to cart">
+                    <input type="submit" value="Add to cart" class="buy-btn">
                 </form>
-            {% endif %}
-    {% endfor %}
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            <br>
+            <br>
+             <a href="{% url 'login' %}">Sign in to make purchases</a>
+          {% endif %}
+        </div>
 
-    {% endif %}
+      </section>
+    </div>
 
-  <div style="margin-left:20px;margin-top:20px">
   </div>
+
+
 {% endblock %}

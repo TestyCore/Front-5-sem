@@ -1,0 +1,52 @@
+.profile-page {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.profile-page .info-wrapper {
+    grid-column: 1/4;
+    margin: 1em 0;
+    font-size: 1.2em;
+}
+
+.profile-page .edit-info {
+    margin: 1em 0;
+}
+
+.profile-page .reviews {
+    grid-column: 5/9;
+    margin: 1em 0;
+}
+
+.profile-page .orders {
+    grid-column: 9/13;
+    margin: 1em 0;
+}
+.profile-page .rate-link {
+    display: inline-block;
+    margin-top: 0.5em;
+    padding: 10px 20px;
+    background-color: rgb(48, 118, 56);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.rate-link:hover {
+    background-color: rgb(62, 153, 72);
+}
+
+summary {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.review-record {
+    margin-bottom: 1.5em ;
+}
+
+.review-record i {
+    color: orange;
+}

@@ -1,37 +1,65 @@
 {% extends "base.html" %}
-
+{% load static %}
+{% block title %}Order list{% endblock %}
 {% block content %}
-  <h1>Order List</h1>
-  {% if order_list %}
-    <ul>
-      {% for order in order_list %}
-        <li>
-          Order: {{ order.id }} - Client: {{ order.client }}
-          <ul>
-            {% for item in order.items.all %}
-              <li>
-                <a>{{ item.get_cost }}</a>
-                <a>{{ item.quantity }}x</a>
-                <a>{{ item.product.title }}x</a>
-              </li>
-            {% empty %}
-              <li>No products.</li>
-            {% endfor %}
-          </ul>
-{#          <a style="font-weight: bold">Total: ${{ order.get_total_cost }}</a>#}
-        </li>
-      {% empty %}
-        <li>No orders found.</li>
-      {% endfor %}
-    </ul>
+
+  <div class="order-list-page">
+    <section class="header">
+      <h1>Order List</h1>
+    </section>
+
+    <section class="order-list">
+      {% if order_list %}
+      <ul>
+        {% for order in order_list %}
+          <br>
+          <br>
+          <br>
+          <li>
+            <strong>Client: {{ order.client }}</strong>
+            <br>
+            <small>{{ order.created }}</small>
+            <br>
+            <br>
+            <ul>
+              {% for item in order.items.all %}
+                <li>
+                  <a>{{ item.get_cost }}</a>
+                  <a>{{ item.quantity }}x</a>
+                  <a>{{ item.product.title }}</a>
+                </li>
+              {% empty %}
+                <li>No products.</li>
+              {% endfor %}
+            </ul>
+            <br>
+            <a style="font-weight: bold">Total: ${{ order.get_total_cost }}</a>
+          </li>
+        {% empty %}
+          <li>No orders found.</li>
+        {% endfor %}
+      </ul>
+    </section>
+       <br>
+      <br>
+      <br>
+    <section class="metrics">
+      <p style="font-weight: bold">Total: {{ total_cost }}$</p>
+      <p style="font-weight: bold">Average: {{ average_cost }}$</p>
+      <p style="font-weight: bold">Mode: {{ mode_cost }}$</p>
+      <p style="font-weight: bold">Most Common: {{ most_common_item_name }}$</p>
+    </section>
+    <section class="graph">
+      <br>
+      <img src="{% static 'client_list/images/order_count_graph.png' %}" alt="">
+    </section>
+    {% else %}
+      <p>There are no orders.</p>
+    {% endif %}
 
 
-{#    <a style="font-weight: bold">Total: ${{ total_cost }}</a>#}
-{#    <a style="font-weight: bold">Average: ${{ average_cost }}</a>#}
-{#    <a style="font-weight: bold">Mode: ${{ mode_cost }}</a>#}
-{#    <a style="font-weight: bold">Most Common: ${{ most_common_item_name }}</a>#}
+  </div>
 
-  {% else %}
-    <p>There are no orders.</p>
-  {% endif %}
 {% endblock %}
+
+

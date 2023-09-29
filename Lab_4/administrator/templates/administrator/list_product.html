@@ -1,9 +1,16 @@
 {% extends "base.html" %}
-
+{% block title %}Product list{% endblock %}
 {% block content %}
-  <h1>Product List</h1>
-  {% if products %}
+
+  <div class="product-list-page">
+    <section class="header">
+      <h1>Product List</h1>
+    </section>
+
+  <section class="product-list">
+     {% if products %}
     <ul>
+
     <form action="{% url 'administrator:create_product'%}" method="get">
             {% csrf_token %}
             <input type="submit" value="Create">
@@ -24,7 +31,11 @@
           </form>
       {% endfor %}
     </ul>
-  {% else %}
-    <p>There are no products in the store.</p>
-  {% endif %}
+    {% else %}
+      <p>There are no products in the store.</p>
+    {% endif %}
+    </section>
+  </div>
+
+
 {% endblock %}

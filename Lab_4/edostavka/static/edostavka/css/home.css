@@ -1,0 +1,82 @@
+.home-page {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.home-partners {
+  display: flex;
+  grid-column: 2/12;
+  margin-bottom: 1em;
+}
+
+.partners-logo img {
+  margin-bottom: 1em;
+  width: 90%;
+  height: 5em;
+  transition: transform 0.3s ease;
+}
+
+.partners-logo:hover img {
+  transform: scale(1.1);
+}
+
+.home-news {
+  grid-column: 1/10;
+  padding: 0 2em;
+}
+
+.home-banner {
+  grid-column: 10/13;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.home-banner img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  border: 3px solid gray;
+}
+
+.banner-1:hover img {
+  transform: scale(1.05);
+}
+
+.banner-2:hover img {
+  transform: scale(1.05);
+}
+
+.banner-3:hover img {
+  transform: scale(1.05);
+}
+
+.banner-4:hover img {
+  transform: scale(1.05);
+}
+
+.banner-5:hover img {
+  transform: scale(1.05);
+}
+
+.news-title {
+  margin-bottom: 2em;
+}
+
+.news-title p {
+  color: gray;
+}
+
+.news-img img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 2em;
+}
+
+.home-partners h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.partners-logo {
+  text-align: right;
+}

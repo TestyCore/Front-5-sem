@@ -44,6 +44,7 @@ class Product(models.Model):
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.SET_NULL, null=True)
     ean = models.CharField('EAN', max_length=13, unique=True,
                            help_text='13 Character <a href="https://www.eancode.nl/wat-is-een-ean-code/">EAN code</a>')
+    img_url = models.CharField(max_length=100, default='root')
 
     def __str__(self):
         """String for representing the Model object."""
