@@ -4,7 +4,7 @@
 {% block title %}terms_definitions{% endblock %}
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/terms_definitions.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/terms_definitions.css' %}?v=3"/>
 
 <div class="t_and_d_page">
   <article>
@@ -237,7 +237,7 @@
           <div class="question">
             <details>
               <summary>Где увидеть полученную скидку?</summary>
-              <span class="date">15.12.2022</span> <span>Итоговая сумма скидки будет отображена на странице оформления заказа (переход по нажатию кнопки «Оформить заказ»).</span>
+              <span class="date" >15.12.2022</span> <span>Итоговая сумма скидки будет отображена на странице оформления заказа (переход по нажатию кнопки «Оформить заказ»).</span>
                <br>
                <abbr title="autonomous sensory meridian response">ASMR</abbr>
                <br>
@@ -245,21 +245,39 @@
                <br>
                <q cite="https://mir24.tv/news/14522327">ВДОХНОВЕНИЕ – ЭТО УМЕНИЕ ПРИВОДИТЬ СЕБЯ В РАБОЧЕЕ СОСТОЯНИЕ.</q>
                <br>
-               <time datetime="23:00">11 pm.</time>
+               <time datetime="23:01" class="with-context">23:01</time>
+              <time datetime="15:00">15:00</time>
+              <time datetime="10:00">10:00</time>
+              <span class="first second third">Lime</span>
                <br>
               <blockquote cite="https://mir24.tv/news/14522327/nashe-vse-15-citat-pushkina-na-vse-sluchai-zhizni">
                 ГЕНИЙ И ЗЛОДЕЙСТВО
                 – ДВЕ ВЕЩИ НЕСОВМЕСТИМЫЕ.
               </blockquote>
-               <pre>
+              <blockquote lang="en">
+                &ldquo;This is an English quote.&rdquo;
+              </blockquote>
+
+              <blockquote lang="ru">
+                &laquo;Цитата на русском.&raquo;
+              </blockquote>
+               <pre class="cust-font">
                   Я помню чудное мгновенье: <br>
                   Передо мной явилась ты,<br>
                   Как мимолётное виденье,<br>
                   Как гений чистой красоты.<br>
                 </pre>
               <br>
-              <a href="{% static 'edostavka/images/milk.png' %}" download>Download image</a>
+              <a href="{% static 'edostavka/images/milk.png' %}" download class="testlink">Download image</a>
               <br>
+                <label for="radio1">Radio 1</label>
+                <input type="radio" id="radio1" name="radios" value="radio1" >
+                <br>
+                <label for="radio2">Radio 2</label>
+                <input type="radio" id="radio2" name="radios" value="radio2">
+                <br>
+                <label for="radio3">Radio 3 (Blocked)</label>
+                <input type="radio" id="radio3" name="radios" value="radio3" disabled>
               <a href="#anchor">Anchor</a>
 
               <br>

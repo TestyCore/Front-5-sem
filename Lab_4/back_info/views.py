@@ -121,3 +121,7 @@ def news_4(request):
 def news_5(request):
     news = News.objects.all()[5]
     return render(request, 'back_info/news_5.html', {'news': news})
+
+def news_6(request):
+    news = News.objects.all()[6]
+    return render(request, 'back_info/news_6.html', {'news': news})

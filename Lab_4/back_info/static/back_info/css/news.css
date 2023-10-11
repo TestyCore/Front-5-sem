@@ -70,6 +70,7 @@
     text-decoration: none;
     color: black;
     margin: 1em;
+    max-height: 350px;
 }
 
 .all-news .news-card {

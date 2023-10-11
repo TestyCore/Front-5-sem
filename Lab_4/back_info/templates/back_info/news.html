@@ -4,7 +4,7 @@
 {% block title %}news{% endblock %}
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news.css' %}?v=8"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/news.css' %}?v=9"/>
 
 <div class="news-page">
   <div class="news-content">
@@ -32,6 +32,7 @@
         <a href="{% url 'back_info:news_2' %}">Всё для любимых покупателей!<span class="light-gray">&ensp;09 августа 2023</span></a>
         <a href="{% url 'back_info:news_3' %}">Просто звёзды сошлись!<span class="light-gray">&ensp;09 августа 2023</span></a>
         <a href="{% url 'back_info:news_4' %}">Приятный подарок от Edostavka<span class="light-gray">&ensp;08 августа 2023</span></a>
+        <a href="{% url 'back_info:news_6' %}">Пять оттенков радости!<span class="light-gray">&ensp;01 января 2023</span></a>
       </div>
     </section>
 
@@ -63,6 +64,10 @@
             <br>
             <br>
             <h4>Итальянские травы в подарок от Edostavka.by и Gurmina!</h4>
+            <div class="truncate-text">
+              <p></p>
+            </div>
+
           </div>
         </div>
       </a>
@@ -108,6 +113,21 @@
           </div>
         </div>
       </a>
+
+       <a class="news-card-link" href="{% url 'back_info:news_6' %}">
+        <div class="news-card">
+          <div class="news-img">
+            <img src="{% static 'back_info/images/news-6.jpeg' %}?v=2" alt="">
+          </div>
+          <div class="news-descr">
+            <span class="light-gray">1 января 2023</span>
+            <br>
+            <br>
+            <h4>Пять оттенков радости!</h4>
+          </div>
+        </div>
+      </a>
+
     </section>
 
   </div>

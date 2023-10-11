@@ -4,7 +4,7 @@
 {% block title %}About us{% endblock %}
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/about_us.css' %}?v=6"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/about_us.css' %}?v=9"/>
 
 <div class="about-us-page">
 
@@ -24,7 +24,7 @@
 
       <p>Для жителей г. Минска (зона А, А1), доступна «Экспресс-доставка», которая позволит получить заказ в самые короткие сроки. Услуга имеет ряд очевидных преимуществ, которые вы наверняка оцените по достоинству:</p>
       <br>
-      <ul>
+      <ul class="unicode-list">
         <li>Более короткий интервал ожидания заказа (от 30 минут).</li>
         <li>Минимальная сумма заказа — 1 копейка.</li>
         <li>Оформление «Экспресс-доставки» возможно до 22:00, тогда как заказ доставки в обычном режиме доступен до 21:30.</li>
@@ -39,7 +39,6 @@
         В зависимости от объема заказа время «Экспресс-доставки» может варьироваться:</p>
       <br>
       <table>
-        <thead>
         <tr>
           <th id="quantity">Количество товаров в заказе (шт.)</th>
           <th id="min-time">Минимальное время доставки (мин.)</th>
@@ -52,13 +51,13 @@
         </tr>
         <tr>
           <td headers="quantity"><p>31-50</p></td>
-          <td headers="min-time"><p>40</p></td>
+          <td headers="min-time"></td>
           <td headers="max-time"><p>70</p></td>
         </tr>
         <tr>
           <td headers="quantity"><p>51-70</p></td>
           <td headers="min-time"><p>50</p></td>
-          <td headers="max-time"><p>80</p></td>
+          <td headers="max-time"></td>
         </tr>
         <tr>
           <td headers="quantity"><p>71-90</p></td>
@@ -69,10 +68,6 @@
           <td colspan="3"><p>Result</p></td>
         </tr>
 
-        </thead>
-        <tbody>
-
-        </tbody>
       </table>
 
       <br>
@@ -107,7 +102,7 @@
 
     <section class="certificates">
       <div class="custom-cert">
-        <p>EДИНЫЙ РЕЕСТР МАГАЗИНОВ</p>
+        <h2>EДИНЫЙ РЕЕСТР МАГАЗИНОВ</h2>
         <p>СВИДЕТЕЛЬСТВО</p>
         <p>О внесении изменений</p>
         <p>Общество с ограниченно ответственностью</p>

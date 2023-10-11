@@ -50,3 +50,31 @@ summary {
 .review-record i {
     color: orange;
 }
+.form-elem {
+    height: 1.3em;
+    width: 130px;
+    padding: 0.5em;
+    margin-bottom: 10px;
+}
+.form-elem:focus {
+    border-color: white;
+    outline: none;
+    box-shadow: 0 0 26px 3px rgba(0, 255, 21, 0.4);
+
+}
+
+.form-elem:enabled{
+    border-color: lime;
+}
+
+.form-elem:disabled{
+    background-color: grey;
+}
+
+.form-elem:required {
+    font-weight: bold;
+}
+
+.profile-page button:hover {
+    cursor:crosshair;
+}

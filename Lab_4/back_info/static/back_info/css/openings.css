@@ -8,3 +8,12 @@
     display: block;
     margin: 2em 0 0.7em;
 }
+
+.openings-list ul>li>div>img {
+    float:left;
+    width: 150px;
+}
+
+.openings-list ul>li>div>p {
+    clear: left;
+}

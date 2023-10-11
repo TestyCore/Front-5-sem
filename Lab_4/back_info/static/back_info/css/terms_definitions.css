@@ -20,6 +20,12 @@
     column-gap: 2em;
 }
 
+@media(max-width: 900px) {
+    .t_and_d_page .content .questions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .questions-grid .question {
     box-shadow: 0 -22px 21px -18px rgba(141,133,124,0.3);
 }
@@ -40,3 +46,99 @@
 .questions-grid .question .date {
     color: gray;
 }
+
+[datetime] {
+    color: deeppink;
+}
+
+[datetime="15:00"] {
+    color: gold;
+}
+
+[class~="second"] {
+    color: lime;
+}
+
+[datetime^="1"] {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+[datetime$="01"] {
+    font-style: italic;
+}
+
+[class*="cond"] {
+    font-size: 0.5em;
+}
+
+span.third {
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.testlink:link {
+    text-decoration: none;
+    color: green;
+}
+
+.testlink:hover {
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+.testlink:active {
+    color: pink;
+    font-weight: bold;
+}
+
+input[type="radio"]:last-of-type {
+    opacity: 0.5;
+}
+
+#radio2 {
+    background-color: orange;
+    color: orange;
+}
+
+blockquote::first-letter {
+    font-size: 1.3em;
+    color: red;
+}
+
+.with-context::before {
+  content: "Start: ";
+  font-weight: bold;
+  color: green;
+}
+
+.with-context::after {
+  content: " :End";
+  font-weight: bold;
+  color: blue;
+}
+
+.testlink {
+    text-transform: uppercase;
+    word-spacing: 1em;
+    word-wrap: break-word;
+}
+
+.cust-font {
+    text-indent: 30px;
+    line-height: 2em;
+}
+
+.cust-font:hover {
+  color: lime;
+  transition: color 1s;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+

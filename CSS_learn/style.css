@@ -1,0 +1,14 @@
+.q {
+    margin-bottom: 320px;
+    height: 50px;
+    background-color: aquamarine;
+    outline: 2px dashed rgba(255,255,255,0.8);
+    outline-offset: -10px; 
+}
+
+.w {
+    border: 10px solid black;
+    /* padding: 100px; */
+    margin-top: 315px;
+    background-color: red;
+}

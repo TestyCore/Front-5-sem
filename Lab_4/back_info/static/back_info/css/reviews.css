@@ -17,3 +17,12 @@
 .reviews-page .reviews-list .review-record {
     margin: 2.5em 0;
 }
+
+.visited:visited {
+    color: coral;
+}
+
+
+
+
+

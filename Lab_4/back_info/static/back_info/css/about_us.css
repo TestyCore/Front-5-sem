@@ -5,6 +5,7 @@
 
 .about-us-page .header {
     grid-column: 1/9;
+    font-kerning: auto;
 }
 
 .about-us-page .header {
@@ -38,6 +39,7 @@
     margin: 1em 0 3em;
     border-left: 1px solid rgb(56, 54, 54);
     padding-left: 0.5em;
+    font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
 }
 
 .about-us-page .contacts-wrapper h3 {
@@ -49,7 +51,24 @@
 }
 
 .contacts-wrapper .certificates .custom-cert{
-    background-color: wheat;
+    background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 0, 0.3),
+    rgba(0, 0, 255, 0.3)
+  ), url("https://openclipart.org/download/319441/bird-logo.svg");
+    border: 30px solid transparent;
+    background-size: 100% 100%;
+    -moz-border-image: url('https://static.vecteezy.com/system/resources/thumbnails/015/314/464/small/abstract-modern-elegant-blue-gold-frame-border-social-media-free-png.png') 15 30;
+    -webkit-border-image: url('https://static.vecteezy.com/system/resources/thumbnails/015/314/464/small/abstract-modern-elegant-blue-gold-frame-border-social-media-free-png.png') 15 30;
+    -o--moz-border-image: url('https://static.vecteezy.com/system/resources/thumbnails/015/314/464/small/abstract-modern-elegant-blue-gold-frame-border-social-media-free-png.png') 15 30;
+    padding: 20px;
+    font-family: "Times New Roman", serif;
+    line-height: 2em;
+    text-align: center;
+    z-index: 5;
+
+
+
 }
 
 .contacts-wrapper .certificates img{
@@ -66,4 +85,47 @@
 
 .history .year {
     font-weight: bold;
+}
+
+ul li:first-child {
+    color: red;
+}
+
+ul li:last-child {
+    color: green;
+}
+
+ul li:nth-child(2) {
+    color: orange;
+}
+
+.unicode-list {
+  list-style: none;
+}
+
+.unicode-list li::before {
+  content: "\150";
+  margin-right: 5px;
+}
+
+li::selection {
+    background-color: black;
+    color: green;
+}
+
+.cust-font {
+    font-family: Courier, serif, monospace;
+}
+
+table th {
+    font-size: 1.2em;
+    font-style: italic;
+}
+table td:empty {
+  background-color: lightgray;
+}
+
+table th, td {
+  text-align: center;
+  vertical-align: middle;
 }
