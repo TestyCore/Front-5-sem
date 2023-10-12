@@ -140,5 +140,34 @@ blockquote::first-letter {
   100% { transform: rotate(360deg); }
 }
 
+input[type="checkbox"]:checked + span {
+    background: green;
+}
+
+input[type="radio"]:checked + span {
+    background: orange;
+}
+
+
+blockquote:lang(en)::before {
+  content: "“";
+  font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+}
+
+blockquote:lang(en)::after {
+  content: "”";
+}
+
+blockquote:lang(ru)::before {
+  content: "«";
+  font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+}
+
+blockquote:lang(ru)::after {
+  content: "»";
+}
+
+
+
 
 

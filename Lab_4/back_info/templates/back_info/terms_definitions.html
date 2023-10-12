@@ -4,7 +4,7 @@
 {% block title %}terms_definitions{% endblock %}
 {% block content %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/terms_definitions.css' %}?v=3"/>
+<link rel="stylesheet" type="text/css" href="{% static 'back_info/css/terms_definitions.css' %}?v=4"/>
 
 <div class="t_and_d_page">
   <article>
@@ -250,16 +250,21 @@
               <time datetime="10:00">10:00</time>
               <span class="first second third">Lime</span>
                <br>
+
+              <input type="checkbox" name="1"><span>First</span><br>
+              <input type="checkbox" name="2"><span>Second</span><br>
+              <input type="checkbox" name="3"><span>Third</span><br>
+
               <blockquote cite="https://mir24.tv/news/14522327/nashe-vse-15-citat-pushkina-na-vse-sluchai-zhizni">
                 ГЕНИЙ И ЗЛОДЕЙСТВО
                 – ДВЕ ВЕЩИ НЕСОВМЕСТИМЫЕ.
               </blockquote>
               <blockquote lang="en">
-                &ldquo;This is an English quote.&rdquo;
+                This is an English quote
               </blockquote>
 
               <blockquote lang="ru">
-                &laquo;Цитата на русском.&raquo;
+                Цитата на русском.
               </blockquote>
                <pre class="cust-font">
                   Я помню чудное мгновенье: <br>
@@ -270,14 +275,9 @@
               <br>
               <a href="{% static 'edostavka/images/milk.png' %}" download class="testlink">Download image</a>
               <br>
-                <label for="radio1">Radio 1</label>
-                <input type="radio" id="radio1" name="radios" value="radio1" >
-                <br>
-                <label for="radio2">Radio 2</label>
-                <input type="radio" id="radio2" name="radios" value="radio2">
-                <br>
-                <label for="radio3">Radio 3 (Blocked)</label>
-                <input type="radio" id="radio3" name="radios" value="radio3" disabled>
+                <input type="radio" id="radio1" name="radios" value="radio1" ><span>First</span><br>
+                <input type="radio" id="radio2" name="radios" value="radio2"><span>First</span><br>
+                <input type="radio" id="radio3" name="radios" value="radio3" disabled><span>First</span><br>
               <a href="#anchor">Anchor</a>
 
               <br>

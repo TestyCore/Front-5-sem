@@ -61,14 +61,12 @@
     -moz-border-image: url('https://static.vecteezy.com/system/resources/thumbnails/015/314/464/small/abstract-modern-elegant-blue-gold-frame-border-social-media-free-png.png') 15 30;
     -webkit-border-image: url('https://static.vecteezy.com/system/resources/thumbnails/015/314/464/small/abstract-modern-elegant-blue-gold-frame-border-social-media-free-png.png') 15 30;
     -o--moz-border-image: url('https://static.vecteezy.com/system/resources/thumbnails/015/314/464/small/abstract-modern-elegant-blue-gold-frame-border-social-media-free-png.png') 15 30;
+    background-clip: padding-box;
     padding: 20px;
     font-family: "Times New Roman", serif;
     line-height: 2em;
     text-align: center;
     z-index: 5;
-
-
-
 }
 
 .contacts-wrapper .certificates img{
@@ -117,9 +115,13 @@ li::selection {
     font-family: Courier, serif, monospace;
 }
 
+table {
+    border-collapse: collapse;
+}
 table th {
     font-size: 1.2em;
     font-style: italic;
+    border: 1px solid red;
 }
 table td:empty {
   background-color: lightgray;
